@@ -1,0 +1,628 @@
+{
+  "greetings": {
+    "welcome": "Welcome on board"
+  },
+  "navbar": {
+    "nowHiring": "Now Hiring:",
+    "hiringText": "Are you a driven and motivated 1st Line IT Support Engineer?",
+    "hiringPrefix": "Are you a driven and motivated",
+    "hiringRole": "1st Line IT Support Engineer?",
+    "home": "Home",
+    "governments": "Governments",
+    "businesses": "Businesses",
+    "individuals": "Individuals",
+    "contact": "Contact",
+    "hotline": "hotline 24/7",
+    "freeQuote": "Get a quote",
+    "getInTouch": "Get In Touch"
+  },
+  "governments": {
+    "meta": {
+      "title": "AI Solutions for Smarter Public Finance | iKwook",
+      "description": "We partner with government agencies to recover lost revenues and bring discipline to public spending through intelligent, auditable, custom-built AI models."
+    },
+    "hero": {
+      "eyebrow": "Government Solutions",
+      "title": "The AI Command Center for Smarter Public Finance",
+      "subtitle": "We partner with government agencies at all levels to recover lost revenues and bring discipline to public spending through intelligent, auditable, and custom-built models.",
+      "primaryCta": "Speak with an expert",
+      "secondaryCta": "Explore our solutions",
+      "trustedBy": "Trusted by public institutions across Canada"
+    },
+    "platform": {
+      "eyebrow": "Explore your command center",
+      "title": "One Platform. Two Service Areas.",
+      "subtitle": "Launch sovereign intelligence in weeks, then scale across revenue recovery and expenditure rationalization with a unified data foundation."
+    },
+    "lifecycle": {
+      "eyebrow": "End-to-end protection",
+      "title": "Protect Public Finance at Every Step",
+      "subtitle": "From audit prioritization to spending quality, our models give agencies the tools to protect revenue and discipline expenditure across the full lifecycle.",
+      "steps": {
+        "audit": {
+          "title": "Data Foundation & Audit Prioritization",
+          "description": "Aggregate agency data sources and surface high-risk cases before enforcement teams act using explainable models built for your legal framework."
+        },
+        "detect": {
+          "title": "Fraud & Anomaly Detection",
+          "description": "Detect sales underreporting, income inconsistencies, customs fraud, and expenditure anomalies with AI scoring your teams can defend in audit."
+        },
+        "enforce": {
+          "title": "Build, Deploy & Transfer",
+          "description": "Deploy custom models inside your environment, refine performance with your data, and transfer full ownership to your agency teams."
+        },
+        "optimize": {
+          "title": "Spending Quality & Accountability",
+          "description": "Benchmark program spending against outcomes, identify waste before it compounds, and support data-driven budget decisions."
+        }
+      }
+    },
+    "why": {
+      "eyebrow": "Why iKwook",
+      "title": "Built for What Generic Vendors Can't Deliver",
+      "subtitle": "Public finance leaders need explainable, sovereign AI, not black-box tools that can't survive audit or legislative scrutiny.",
+      "pillars": {
+        "data": {
+          "label": "Data",
+          "title": "Detect Risk With Agency-Owned Intelligence",
+          "description": "Our models cross-reference your operational, fiscal, and third-party data to flag revenue leakage and spending anomalies other platforms miss.",
+          "link": "Explore our approach"
+        },
+        "compliance": {
+          "label": "Compliance",
+          "title": "Explainable Decisions Your Auditors Can Trust",
+          "description": "Every score is defensible. Rules-based and AI-driven analysis stay transparent, compliant, and adaptable to your agency's legal framework.",
+          "link": "Learn about compliance"
+        },
+        "speed": {
+          "label": "Speed",
+          "title": "From Data to Impact in Weeks, Not Years",
+          "description": "Purpose-built deployments move from data audit to operational models quickly, with hands-on support through transfer to your teams.",
+          "link": "See implementation path"
+        },
+        "sovereignty": {
+          "label": "Sovereignty",
+          "title": "Sovereign AI That Stays Under Your Control",
+          "description": "Models are built for government context, deployed in your environment, and owned by your institution, not locked in a vendor cloud.",
+          "link": "Talk to our team"
+        }
+      }
+    },
+    "solutionsDetail": {
+      "eyebrow": "Full capability map",
+      "title": "Every Solution. Every Use Case.",
+      "subtitle": "Seven custom-built models covering revenue maximization and expenditure rationalization, each with measurable value delivered."
+    },
+    "caseStudies": {
+      "eyebrow": "Proven impact",
+      "title": "Built for Government's Unique Challenges",
+      "quote": "Our models give enforcement teams actionable intelligence they can defend, recovering revenue while strengthening public trust.",
+      "cta": "Read the case study"
+    },
+    "serviceAreas": {
+      "badge": "Services",
+      "title": "Our Two Service Areas",
+      "revenue": {
+        "heading": "Recover What Is Owed. Protect the Public Purse.",
+        "intro": "Governments lose significant revenues each year to fraud, underreporting, and evasion. Our revenue maximization solutions use advanced AI models to detect anomalies, identify fraudulent behavior, and support enforcement teams with actionable intelligence."
+      },
+      "expenditure": {
+        "heading": "Spend Better. Waste Less. Serve More.",
+        "intro": "Public spending is under constant scrutiny. Beyond cutting budgets, governments need smarter ways to ensure every dollar spent achieves its intended purpose. Our expenditure rationalization solutions bring AI intelligence to procurement, benefits, and operational spending."
+      }
+    },
+    "revenue": {
+      "badge": "Revenue Maximization",
+      "heading": "Recover What Is Owed. Protect the Public Purse.",
+      "intro": "All models are built to be explainable, compliant, and adaptable to your agency's legal framework.",
+      "solutions": {
+        "salesRevenue": {
+          "title": "Sales Revenue Fraud Detection",
+          "description": "Businesses may underreport their actual sales revenue to reduce their tax obligations. Our model analyzes declared turnover figures against consumption patterns, sector benchmarks, supplier transactions, and employment data to flag inconsistencies and high-risk cases for audit prioritization.",
+          "benefits": [
+            "Increased audit efficiency",
+            "Recovery of undeclared tax revenues",
+            "Deterrence effect on non-compliant taxpayers"
+          ]
+        },
+        "incomeTax": {
+          "title": "Income-Based Tax Fraud Detection",
+          "description": "Our income tax fraud detection model cross-references declared income across multiple data sources employment records, financial transactions, lifestyle indicators, and third-party reporting to identify individuals and entities whose declared income appears inconsistent with observed economic activity.",
+          "benefits": [
+            "More accurate income declarations",
+            "Better targeting of audit resources",
+            "Reduction in the tax gap"
+          ]
+        },
+        "profitBased": {
+          "title": "Profit-Based Fraud Detection",
+          "description": "Profit manipulation through artificial cost inflation, transfer pricing abuse, or intercompany transactions is one of the most sophisticated forms of tax evasion. Our model examines financial statements, related-party transactions, and industry profit margins to surface entities likely engaging in profit-shifting schemes.",
+          "benefits": [
+            "Detection of complex profit manipulation",
+            "Support for large taxpayer monitoring units",
+            "Enhanced corporate tax compliance"
+          ]
+        },
+        "customs": {
+          "title": "Customs Fraud Detection",
+          "description": "Customs fraud including undervaluation of imported goods, misclassification of product categories, and smuggling represents a major source of revenue leakage for governments. Our models analyze import/export declarations, shipping data, pricing references, and historical patterns to identify suspicious transactions.",
+          "benefits": [
+            "Reduced customs revenue leakage",
+            "Smarter border inspection prioritization",
+            "Stronger trade compliance"
+          ]
+        }
+      }
+    },
+    "expenditure": {
+      "badge": "Expenditure Rationalization",
+      "heading": "Spend Better. Waste Less. Serve More.",
+      "intro": "Our expenditure rationalization solutions identify fraud, losses, and quality gaps before they compound, bringing AI intelligence to procurement, benefits, and operational spending.",
+      "solutions": {
+        "expenditureFraud": {
+          "title": "Expenditure Fraud Detection",
+          "description": "From procurement fraud and false invoicing to benefits abuse and payroll manipulation, fraudulent expenditure drains public resources. Our models analyze transaction patterns, vendor relationships, approval workflows, and claim histories to surface anomalies indicative of fraudulent activity.",
+          "benefits": [
+            "Early detection of procurement and payment fraud",
+            "Reduced exposure to benefits and subsidy abuse",
+            "Stronger internal controls"
+          ]
+        },
+        "lossDetection": {
+          "title": "Loss Detection in Public Spending",
+          "description": "Not all spending losses are fraudulent, many result from inefficiency, duplication, process failures, or poor contract management. Our loss detection models identify where public funds are being spent without delivering proportional value, enabling agencies to redirect resources more effectively.",
+          "benefits": [
+            "Identification of non-fraudulent but wasteful spending",
+            "Better resource allocation decisions",
+            "Improved program efficiency"
+          ]
+        },
+        "spendingQuality": {
+          "title": "Spending Quality Improvement",
+          "description": "Beyond detecting what is wrong, we help government clients understand what good looks like. Our spending quality models benchmark expenditure patterns against performance outcomes, flagging areas where spending could be restructured to deliver better public value.",
+          "benefits": [
+            "Data-driven budget optimization",
+            "Stronger performance accountability",
+            "Better alignment of spending with policy outcomes"
+          ]
+        }
+      }
+    },
+    "businessCases": {
+      "badge": "Case Study",
+      "title": "Proven Impact for Public Institutions",
+      "description": "Our government clients rely on custom-built models that deliver measurable financial outcomes.",
+      "cta": "Get Support",
+      "testimonial": {
+        "name": "Provincial Revenue Agency",
+        "role": "Government Client"
+      },
+      "cases": {
+        "case1": {
+          "title": "Tax Authority Revenue Recovery",
+          "description": "A provincial revenue agency deployed our sales revenue fraud detection model to prioritize audit cases and recover undeclared revenues.",
+          "metric": "Increased audit efficiency and revenue recovery"
+        },
+        "case2": {
+          "title": "Customs Inspection Optimization",
+          "description": "A national customs administration integrated our fraud detection models to prioritize high-risk import declarations, improving border inspection outcomes while reducing revenue leakage.",
+          "metric": "Smarter inspection prioritization"
+        },
+        "case3": {
+          "title": "Public Spending Accountability",
+          "description": "A government department used our spending quality models to benchmark program expenditures against outcomes, enabling data-driven budget restructuring and stronger accountability reporting.",
+          "metric": "Better alignment of spending with policy outcomes"
+        }
+      },
+      "stats": {
+        "stat1": { "value": "—", "label": "Revenue recovered" },
+        "stat2": { "value": "—", "label": "Audit efficiency" }
+      }
+    },
+    "cta": {
+      "title": "The AI Command Center for Smarter Public Finance",
+      "subtitle": "Book time with our experts to discuss revenue recovery, expenditure rationalization, and sovereign deployment for your agency.",
+      "primaryButton": "Request Executive Briefing",
+      "secondaryButton": "Speak to an Expert"
+    },
+    "images": {
+      "hero": "Hero — command center visual, 16:9 recommended",
+      "platformRevenue": "Platform — revenue maximization dashboard",
+      "platformExpenditure": "Platform — expenditure rationalization dashboard",
+      "lifecycle": {
+        "audit": "Lifecycle — data foundation & audit prioritization",
+        "detect": "Lifecycle — fraud & anomaly detection",
+        "enforce": "Lifecycle — build, deploy & transfer",
+        "optimize": "Lifecycle — spending quality & accountability"
+      },
+      "solutions": {
+        "salesRevenue": "Solution — sales revenue fraud detection",
+        "incomeTax": "Solution — income-based tax fraud detection",
+        "profitBased": "Solution — profit-based fraud detection",
+        "customs": "Solution — customs fraud detection",
+        "expenditureFraud": "Solution — expenditure fraud detection",
+        "lossDetection": "Solution — loss detection in public spending",
+        "spendingQuality": "Solution — spending quality improvement"
+      },
+      "why": {
+        "data": "Why iKwook — agency-owned intelligence",
+        "compliance": "Why iKwook — explainable & auditable decisions",
+        "speed": "Why iKwook — fast deployment timeline",
+        "sovereignty": "Why iKwook — sovereign AI deployment"
+      },
+      "caseStudies": {
+        "featured": "Case study — featured quote background",
+        "case1": "Case study — tax authority revenue recovery",
+        "case2": "Case study — customs inspection optimization",
+        "case3": "Case study — public spending accountability"
+      },
+      "cta": "CTA — executive briefing visual, 21:9 recommended"
+    }
+  },
+  "individuals": {
+    "meta": {
+      "title": "Your Financial Future Deserves Better Intelligence | iKwook",
+      "description": "AI-driven financial analysis for individuals — clarity, insight, and tools to make smarter decisions with your money."
+    },
+    "hero": {
+      "eyebrow": "Individual Solutions",
+      "title": "Your Financial Future Deserves Better Intelligence",
+      "subtitle": "We bring the power of AI-driven financial analysis to individuals — giving you the clarity, insight, and tools to make smarter decisions with your money.",
+      "primaryCta": "Speak with an expert",
+      "secondaryCta": "Explore our services",
+      "trustedBy": "Built for personal financial clarity"
+    },
+    "services": {
+      "eyebrow": "What we offer individuals",
+      "title": "Smarter Analysis. Clearer Decisions.",
+      "subtitle": "Three services designed to turn your financial data into actionable intelligence — not generic advice.",
+      "items": {
+        "performance": {
+          "title": "Personal Financial Performance Analysis",
+          "heading": "Understand Where Your Money Really Goes",
+          "description": "Most people manage their finances reactively — reviewing statements after the fact, making decisions based on incomplete pictures. Our personal financial analysis service builds a comprehensive model of your income, spending patterns, and financial behavior to give you a clear, structured view of your financial health — and where it can improve."
+        },
+        "opportunities": {
+          "title": "Financial Opportunity Identification",
+          "heading": "Find the Value You're Leaving on the Table",
+          "description": "Hidden in your financial data are opportunities: unnecessary fees you are paying, tax positions you are not optimizing, savings you are not capturing, and investment behaviors that could be improved. We identify these opportunities with precision, giving you actionable recommendations grounded in your own data."
+        },
+        "modeling": {
+          "title": "Personalized Financial Improvement Modeling",
+          "heading": "A Plan Built Around Your Numbers, Not a Template",
+          "description": "We do not offer generic financial advice. We build a model specific to your situation — your income, your goals, your risk profile, your obligations — and use it to map a realistic path toward your financial performance objectives, whether that means building savings, reducing debt, or growing wealth over time."
+        }
+      }
+    },
+    "commitment": {
+      "eyebrow": "Our commitment to you",
+      "title": "Enterprise-Grade Intelligence, Personal Privacy",
+      "text": "The same quality of financial intelligence available to governments and major corporations is now accessible to you. We treat your financial data with the highest standards of confidentiality, and every model we build is yours — explained clearly, transferred fully, and designed to grow with you."
+    },
+    "approach": {
+      "eyebrow": "Business case",
+      "title": "How Does It Work?",
+      "subtitle": "Our approach — from your data to a model you own and can evolve.",
+      "steps": {
+        "dataPrep": {
+          "title": "Data Analysis and Preparation",
+          "description": "We identify available data sources and assess their quality, relevance, and potential. If necessary, we propose the implementation of new data sources, the creation of data warehouses, and the development of tools for data extraction, transformation, and integration."
+        },
+        "modelDesign": {
+          "title": "Model Design and Indicator Definition",
+          "description": "We determine the solutions and models best suited to your objectives. In collaboration with you, we define the key performance indicators (KPIs), business rules, and analysis criteria specific to your situation in order to build customized models."
+        },
+        "deployment": {
+          "title": "Deployment and Knowledge Transfer",
+          "description": "We implement the solution, integrate it into your operational environment, and support you during its production launch. We also ensure knowledge transfer so that you can operate, maintain, and evolve the solution according to your needs and the evolution of your data."
+        }
+      }
+    },
+    "cta": {
+      "title": "Your Financial Future Deserves Better Intelligence",
+      "subtitle": "Book time with our experts to discuss personal financial analysis, opportunity identification, and a model built around your numbers.",
+      "primaryButton": "Get Started",
+      "secondaryButton": "Speak to an Expert"
+    },
+    "images": {
+      "hero": "Hero — personal finance command center, 16:9 recommended",
+      "services": {
+        "performance": "Service — personal financial performance analysis",
+        "opportunities": "Service — financial opportunity identification",
+        "modeling": "Service — personalized improvement modeling"
+      },
+      "commitment": "Commitment — confidentiality and ownership visual, 21:9 recommended",
+      "approach": {
+        "dataPrep": "Approach — data analysis and preparation",
+        "modelDesign": "Approach — model design and KPI definition",
+        "deployment": "Approach — deployment and knowledge transfer"
+      },
+      "cta": "CTA — get started visual, 21:9 recommended"
+    }
+  },
+  "business": {
+    "meta": {
+      "title": "Financial Performance Intelligence for Enterprises | iKwook",
+      "description": "We help businesses uncover hidden losses, recover untapped revenue, and build models that make financial performance a competitive advantage."
+    },
+    "hero": {
+      "title": "Financial Performance Intelligence For Forward-Thinking Companies",
+      "subtitle": "We Help Businesses Uncover Hidden Losses, Recover Untapped Revenue, And Build The Models That Make Financial Performance A Competitive Advantage.",
+      "imageAlt": "Business professional using a laptop"
+    },
+    "services": {
+      "title": "Our Enterprise Solutions",
+      "valueDelivered": "Value delivered",
+      "solutions": {
+        "resourceLoss": {
+          "badge": "Resource Loss & Underutilization Detection",
+          "heading": "Stop Losing What You Already Have",
+          "description1": "Many businesses operate with significant hidden losses - materials wasted in production, assets sitting idle, workforce hours misallocated, or services rendered without billing. These losses rarely appear clearly in financial statements, but they accumulate into major bottom-line impact over time.",
+          "description2": "Our resource loss detection models analyze your operational and financial data to identify where value is leaking - whether through physical waste, process inefficiency, underutilized capacity, or billing gaps. The result is a clear, prioritized picture of where recoverable value exists and how to act on it.",
+          "useCases": {
+            "u1": "Manufacturing and production loss detection",
+            "u2": "Asset and equipment underutilization analysis",
+            "u3": "Unbilled services and revenue leakage identification",
+            "u4": "Labor efficiency and allocation modeling"
+          },
+          "valueDelivered": {
+            "v1": "Quantified view of operational losses",
+            "v2": "Prioritized recovery opportunities",
+            "v3": "Improved margin without growing revenue"
+          }
+        },
+        "clientIntelligence": {
+          "badge": "Revenue Growth Through Client Intelligence",
+          "heading": "Grow Revenue by Understanding Your Clients Better",
+          "description1": "Revenue growth is not always about acquiring new customers. For most businesses, the greatest opportunity lies in better serving and retaining the clients they already have - and converting occasional buyers into loyal, recurring relationships.",
+          "description2": "Our client intelligence models analyze transaction histories, engagement patterns, behavioral signals, and lifecycle data to identify your highest-potential clients, predict churn risk, and surface opportunities to deepen relationships through the right offer at the right time.",
+          "useCases": {
+            "u1": "Recurring client identification and value modeling",
+            "u2": "Subscriber and loyalty program optimization",
+            "u3": "Churn prediction and early retention intervention",
+            "u4": "Cross-sell and upsell opportunity detection"
+          },
+          "valueDelivered": {
+            "v1": "Higher client lifetime value",
+            "v2": "Reduced churn and improved retention rates",
+            "v3": "More targeted and effective growth strategies"
+          }
+        }
+      }
+    },
+    "wcu": {
+      "badge": "Why Enterprises Choose Us",
+      "text": "Our enterprise clients are not looking for dashboards. They are looking for answers. We build models that produce specific, actionable intelligence tied directly to financial outcomes - and we stay engaged until those outcomes are real.",
+      "highlights": {
+        "actionable": "Actionable intelligence",
+        "outcomes": "Financial outcomes",
+        "engaged": "Engaged until results are real"
+      },
+      "imageAlt": "Team collaboration around workstation"
+    },
+    "cases": {
+      "eyebrow": "Business Cases",
+      "title": "Proven Impact For Enterprise Teams",
+      "subtitle": "Real scenarios where actionable intelligence translated into measurable financial outcomes - not just dashboards.",
+      "challenge": "Challenge:",
+      "solution": "Solution:",
+      "featured": {
+        "sector": "Manufacturing",
+        "title": "Hidden Production Losses Recovered",
+        "challenge": "A mid-size manufacturer was losing value through material waste, idle assets, and misallocated labor - losses that never surfaced clearly in monthly financial reports.",
+        "solution": "We deployed resource loss detection models across production, asset utilization, and workforce allocation data to quantify leakage and prioritize recovery actions.",
+        "outcome": "Improved margin without growing revenue",
+        "tags": {
+          "t1": "Loss detection",
+          "t2": "Process efficiency",
+          "t3": "Margin recovery"
+        }
+      },
+      "secondary": {
+        "case1": {
+          "sector": "Retail & Services",
+          "title": "Client Retention Uplift Through Intelligence",
+          "description": "A multi-location service business used client intelligence models to identify high-risk churn segments and deploy targeted retention offers at the right lifecycle moment.",
+          "outcome": "Higher client lifetime value across recurring segments",
+          "tags": {
+            "t1": "Client intelligence",
+            "t2": "Churn prediction",
+            "t3": "Retention"
+          }
+        },
+        "case2": {
+          "sector": "Professional Services",
+          "title": "Unbilled Revenue Identified and Recovered",
+          "description": "An enterprise services firm uncovered delivered work that was never invoiced by connecting operational activity logs with billing and contract data.",
+          "outcome": "Recovered billable services previously missed in operations",
+          "tags": {
+            "t1": "Revenue leakage",
+            "t2": "Billing gaps",
+            "t3": "Recovery"
+          }
+        }
+      }
+    }
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact iKwook | Financial Performance Intelligence",
+      "description": "Get in touch with iKwook to discuss your financial performance goals — whether you represent a government agency, lead a business, or are an individual."
+    },
+    "hero": {
+      "title": "Let's Talk About Your Financial Performance Goals",
+      "subtitle": "Whether you represent a government agency, lead a business, or are an individual ready to take control of your finances - we would like to hear from you."
+    },
+    "form": {
+      "badge": "Contact Us",
+      "title": "Do you have any question?",
+      "subtitle": "Tell us about your organization, your priorities, and the financial performance outcomes you want to achieve. Our team will respond with the right next steps.",
+      "fields": {
+        "firstName": "First name",
+        "name": "Name",
+        "category": "Category",
+        "categoryPlaceholder": "Select a category",
+        "country": "Country",
+        "countryPlaceholder": "Select a country",
+        "mainInterest": "Main interest",
+        "language": "Language",
+        "email": "Email Address",
+        "phone": "Phone Number",
+        "subject": "Subject / Brief Description of Your Needs",
+        "message": "Message",
+        "submit": "Submit Now"
+      },
+      "categories": {
+        "governmentAgency": "Government agency",
+        "revenueAuthority": "Revenue Authority",
+        "bank": "Bank / Financial institution",
+        "enterprise": "Enterprise"
+      },
+      "countries": {
+        "canada": "Canada",
+        "unitedStates": "United States",
+        "france": "France",
+        "unitedKingdom": "United Kingdom",
+        "germany": "Germany",
+        "belgium": "Belgium",
+        "switzerland": "Switzerland",
+        "senegal": "Senegal",
+        "ivoryCoast": "Ivory Coast",
+        "cameroon": "Cameroon",
+        "morocco": "Morocco",
+        "algeria": "Algeria",
+        "tunisia": "Tunisia",
+        "other": "Other"
+      },
+      "interests": {
+        "revenueFraud": "Revenue Fraud Detection",
+        "incomeTaxFraud": "Income-Based Tax Fraud Detection",
+        "profitFraud": "Profit-Based Fraud Detection",
+        "customsFraud": "Customs Fraud Detection",
+        "expenditureRationalization": "Expenditure Rationalization",
+        "expenditureFraud": "Expenditure Fraud Detection",
+        "publicSpendingLoss": "Loss Detection in Public Spending",
+        "spendingQuality": "Spending Quality Improvement",
+        "resourceLoss": "Resource Loss & Underutilization Detection",
+        "clientIntelligence": "Revenue Growth Through Client Intelligence",
+        "personalPerformance": "Personal Financial Performance Analysis",
+        "financialOpportunity": "Financial Opportunity Identification",
+        "personalModeling": "Personalized Financial Improvement Modeling"
+      },
+      "languages": {
+        "english": "English",
+        "french": "French"
+      },
+      "cards": {
+        "companyName": {
+          "title": "Company Name",
+          "line1": "iKwook Inc"
+        },
+        "location": {
+          "title": "Location",
+          "line1": "173 Notre-Dame street,",
+          "line2": "Winnipeg, Manitoba, Canada"
+        },
+        "email": {
+          "title": "Email",
+          "line1": "contact@ikwook.ca"
+        },
+        "phone": {
+          "title": "Phone",
+          "line1": "+1 204 698-9279"
+        }
+      }
+    }
+  },
+
+  "nav": {
+    "home": "Home",
+    "performance": "Performance",
+    "solutions": "Solutions",
+    "methodology": "Methodology",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Unlock Financial Performance",
+    "subtitle": "Custom AI models that help governments, enterprises, and individuals maximize revenue, reduce losses, detect fraud, and optimize intelligence.",
+    "cta": "SPEAK TO AN EXPERT",
+    "proposal": "Request a Proposal"
+  },
+  "performance": {
+    "title": "Performance",
+    "badge": "TRADERAI"
+  },
+  "scale": {
+    "title": "Designed for Every Scale",
+    "subtitle": "Our intelligence models are specifically tuned for the unique challenges of public sectors, global enterprises, and private wealth."
+  },
+  "governments": {
+    "title": "Governments",
+    "description": "Sovereign-grade intelligence for revenue maximization and fraud detection.",
+    "features": [
+      "Tax & Customs Fraud Detection",
+      "Revenue Leakage Prevention",
+      "Expenditure Rationalization"
+    ],
+    "cta": "Explore Solutions"
+  },
+  "enterprises": {
+    "title": "Enterprises",
+    "description": "Empower your CFO with deep-learning models that predict churn and identify anomalies.",
+    "features": [
+      "Customer Churn Prediction",
+      "Advanced Revenue Analytics",
+      "Anomaly & Loss Detection"
+    ],
+    "cta": "Explore Solutions"
+  },
+  "individuals": {
+    "title": "Individuals",
+    "description": "Premium wealth optimization tools previously reserved for institutional clients.",
+    "features": [
+      "Personalized Financial Modeling",
+      "Wealth Intelligence & Insights",
+      "Budget Optimization Engine"
+    ],
+    "cta": "Explore Solutions"
+  },
+  "intelligence": {
+    "title": "Intelligence That Adapts in Real-Time",
+    "points": [
+      {
+        "title": "Precision Discovery",
+        "description": "Our models ingest trillions of data points to find the signals that others miss."
+      },
+      {
+        "title": "Neural Architecture",
+        "description": "Sophisticated deep learning structures that mirror complex financial ecosystems."
+      },
+      {
+        "title": "Actionable Outcomes",
+        "description": "We don't just provide data; we provide clear, measurable financial uplift."
+      }
+    ],
+    "methodology": "Our Proprietary Methodology",
+    "discover": "Discover",
+    "discover_desc": "We map your financial ecosystem and identify key areas of friction and revenue leakage.",
+    "model": "Model",
+    "model_desc": "Our engineers build custom neural networks trained specifically on your domain data.",
+    "deploy": "Deploy & Measure",
+    "deploy_desc": "Seamless integration into existing ERP with real-time KPI tracking and optimization."
+  },
+  "stats": {
+    "capital": "CAPITAL PROTECTED",
+    "accuracy": "MORE ACQUIRED",
+    "certified": "TYPE II CERTIFIED",
+    "latency": "RESPONSE LATENCY"
+  },
+  "team": {
+    "title": "Led by Financial Visionaries",
+    "description": "Our team consists of Ph.D. researchers, former central bankers, and world-class software engineers dedicated to the science of wealth maximization."
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  }
+}
