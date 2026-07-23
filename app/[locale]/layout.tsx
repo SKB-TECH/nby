@@ -5,6 +5,7 @@ import type { Metadata } from 'next';
 import { routing } from '@/i18n/routing';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import ScrollProgress from '@/components/church/layout/ScrollProgress';
 import './globals.css';
 
 type Locale = (typeof routing.locales)[number];
@@ -40,6 +41,7 @@ export default async function LocaleLayout({
             <Header />
             <main>{children}</main>
             <Footer />
+            <ScrollProgress />
         </NextIntlClientProvider>
         </body>
         </html>

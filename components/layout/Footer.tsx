@@ -13,6 +13,7 @@ export default function Footer() {
         [fr ? "Accueil" : "Home", "/"],
         [fr ? "Événements" : "Events", "/events"],
         [fr ? "Prédications" : "Sermons", "/messages"],
+        [fr ? "Faire un don" : "Give", "/give"],
         [fr ? "Prendre rendez-vous" : "Book appointment", "/contact"],
         [fr ? "NBY Jeunesse" : "NBY Youth", "/ministries/youth"],
     ] as const;

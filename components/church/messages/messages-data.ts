@@ -1,6 +1,8 @@
 export const YOUTUBE_CHANNEL = "https://www.youtube.com/@prophetecedoumbuma3565";
 export const YOUTUBE_LIVE = `${YOUTUBE_CHANNEL}/live`;
 export const YOUTUBE_CHANNEL_ID = "UCihdvyrABU48hM1CtuZL6sQ";
+export const CURRENT_LIVE_VIDEO_ID: string | null = null;
+export const LATEST_BROADCAST_VIDEO_ID = "UR6I3ckiuLM";
 
 export const sermons = [
     { id: "UR6I3ckiuLM", title: "Séminaire PROMIDE 2026 | Dédé N'LANDU, Pasteur | J2", category: "Séminaire", date: "23 juillet 2026" },
@@ -18,10 +20,10 @@ export const messagesCopy = {
         subtitle: "Retrouvez les messages de la Cité du Surnaturel et grandissez dans la prophétie, le sacerdoce et la foi qui produit des miracles.",
         channel: "Visiter la chaîne YouTube",
         liveEyebrow: "Culte en direct",
-        liveTitle: "Rejoindre le direct NBY",
-        liveText: "Lorsqu’un culte est diffusé, le lecteur permet de le suivre ici sans quitter la plateforme. En dehors des directs, il affiche l’état de la diffusion.",
+        liveTitle: "Direct & dernière diffusion",
+        liveText: "Lorsqu’un direct NBY est actif, il est diffusé dans ce lecteur. En dehors des heures de culte, retrouvez ici notre dernière diffusion complète.",
         joinLive: "Vérifier et rejoindre le direct",
-        liveStatus: "Accès au direct YouTube",
+        liveStatus: "Aucun direct en cours · Dernière diffusion",
         latest: "Dernières prédications",
         watch: "Regarder ici",
         all: "Voir toutes les vidéos",
@@ -35,10 +37,10 @@ export const messagesCopy = {
         subtitle: "Watch messages from the City of the Supernatural and grow in prophecy, priesthood and miracle-working faith.",
         channel: "Visit the YouTube channel",
         liveEyebrow: "Live service",
-        liveTitle: "Join NBY live",
-        liveText: "When a service is streaming, the player lets you watch it here without leaving the platform. Outside live hours, it displays the broadcast status.",
+        liveTitle: "Live & latest broadcast",
+        liveText: "When an NBY live stream is active, it plays in this player. Outside service hours, watch our latest full broadcast here.",
         joinLive: "Check and join live",
-        liveStatus: "YouTube live access",
+        liveStatus: "No live currently · Latest broadcast",
         latest: "Latest sermons",
         watch: "Watch here",
         all: "View all videos",

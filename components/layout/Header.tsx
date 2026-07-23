@@ -17,6 +17,7 @@ export default function Header() {
         [fr ? "Accueil" : "Home", "/"],
         [fr ? "Événements" : "Events", "/events"],
         [fr ? "Prédications" : "Sermons", "/messages"],
+        [fr ? "Faire un don" : "Give", "/give"],
         [fr ? "Contact" : "Contact", "/contact"],
     ] as const;
     const isActive = (href: string) =>
