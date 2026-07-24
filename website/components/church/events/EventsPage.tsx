@@ -23,7 +23,8 @@ export default function EventsPage() {
         const end = activity.endsAt ? new Date(activity.endsAt) : null;
         const month = new Intl.DateTimeFormat(locale, { month: "short" }).format(start).replace(".", "").toUpperCase();
         const time = `${new Intl.DateTimeFormat(locale, { hour: "2-digit", minute: "2-digit" }).format(start)}${end ? ` — ${new Intl.DateTimeFormat(locale, { hour: "2-digit", minute: "2-digit" }).format(end)}` : ""}`;
-        return [String(start.getDate()).padStart(2, "0"), month, activity.type.toUpperCase(), activity.title, time, plainText(activity.description), activity.posterUrl] as const;
+        return [String(start.getDate()).padStart(2, "0"), month, activity.type.toUpperCase(), activity.title, time, plainText(activity.description), activity.posterUrl, activity.id] as const;
     });
-    return <div className="bg-[#f7f8fc] text-[#071117]"><EventsHero copy={copy} /><FeaturedEvent copy={copy} /><EventsList copy={copy} events={apiEvents?.length ? apiEvents : undefined} /><WeeklyRhythm copy={copy} /><HostEvent copy={copy} /></div>;
+    const featured = data?.activities?.[0];
+    return <div className="bg-[#f7f8fc] text-[#071117]"><EventsHero copy={copy} /><FeaturedEvent copy={copy} event={featured} locale={locale} /><EventsList copy={copy} events={apiEvents ?? []} /><WeeklyRhythm copy={copy} /><HostEvent copy={copy} /></div>;
 }

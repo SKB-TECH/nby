@@ -150,7 +150,7 @@ export default function ChurchHomePage() {
         subtitle: contentText(data?.content, "home.hero.subtitle", base.subtitle),
         welcomeTitle: contentText(data?.content, "home.welcome.title", base.welcomeTitle),
         welcomeText: contentText(data?.content, "home.welcome.text", base.welcomeText),
-        events: dynamicEvents?.length ? dynamicEvents : base.events,
+        events: dynamicEvents ?? [],
     } as unknown as HomeCopy;
 
     return (

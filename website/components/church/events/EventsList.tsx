@@ -5,11 +5,11 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, Clock3 } from "lucide-react";
 import type { EventsCopy } from "./events-copy";
 
-type EventItem = readonly [string, string, string, string, string, string, (string | undefined)?];
+type EventItem = readonly [string, string, string, string, string, string, (string | undefined)?, (string | undefined)?];
 
 export default function EventsList({ copy, events }: { copy: EventsCopy; events?: readonly EventItem[] }) {
     const [activeFilter, setActiveFilter] = useState(copy.filters[0]);
-    const eventItems = (events ?? copy.events) as readonly EventItem[];
+    const eventItems = (events ?? []) as readonly EventItem[];
     const normalize = (value: string) =>
         value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toUpperCase();
     const filteredEvents =
@@ -50,11 +50,17 @@ export default function EventsList({ copy, events }: { copy: EventsCopy; events?
                 </motion.p>
 
                 <div className="mt-5 space-y-5">
+                    {!filteredEvents.length && (
+                        <div className="rounded border border-dashed border-slate-300 bg-white px-6 py-14 text-center">
+                            <h3 className="font-serif text-2xl">Aucun événement publié</h3>
+                            <p className="mt-2 text-sm text-slate-500">Les prochains rendez-vous de NBY seront affichés ici dès leur publication.</p>
+                        </div>
+                    )}
                     <AnimatePresence mode="popLayout">
                         {filteredEvents.map((event, index) => (
                             <motion.article
                                 layout
-                                key={event[3]}
+                                key={event[7] ?? `${event[3]}-${event[0]}-${event[1]}`}
                                 initial={{ opacity: 0, y: 22, scale: 0.98 }}
                                 animate={{ opacity: 1, y: 0, scale: 1 }}
                                 exit={{ opacity: 0, y: -16, scale: 0.98 }}

@@ -10,6 +10,14 @@ const workspaceRoot = path.resolve(projectRoot, '..');
 
 const nextConfig: NextConfig = {
     output: 'standalone',
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'res.cloudinary.com',
+            },
+        ],
+    },
     turbopack: {
         root: existsSync(path.join(workspaceRoot, 'pnpm-workspace.yaml'))
             ? workspaceRoot

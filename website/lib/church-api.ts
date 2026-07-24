@@ -45,6 +45,14 @@ export type PublicCampaign = {
   posterUrl?: string;
 };
 
+export type PublicAppointmentSlot = {
+  id: string;
+  startsAt: string;
+  endsAt: string;
+  appointmentType?: string;
+  capacity: number;
+};
+
 export type PublicSiteData = {
   content: PublicContentEntry[];
   sermons: PublicSermon[];
