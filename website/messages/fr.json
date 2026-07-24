@@ -1,0 +1,692 @@
+{
+  "greetings": {
+    "welcome": "Bienvenu a board"
+  },
+  "navbar": {
+    "nowHiring": "Nous recrutons :",
+    "hiringText": "Êtes-vous un ingénieur support IT motivé ?",
+    "hiringPrefix": "Êtes-vous motivé pour devenir",
+    "hiringRole": "Ingénieur support IT niveau 1 ?",
+    "home": "Accueil",
+    "governments": "Gouvernements",
+    "businesses": "Entreprises",
+    "individuals": "Particuliers",
+    "contact": "Contact",
+    "hotline": "hotline 24/7",
+    "freeQuote": "Obtenir un devis",
+    "getInTouch": "Nous contacter"
+  },
+  "governments": {
+    "meta": {
+      "title": "Solutions IA pour des finances publiques plus intelligentes | iKwook",
+      "description": "Nous accompagnons les agences gouvernementales pour récupérer les revenus perdus et discipliner les dépenses publiques grâce à des modèles IA intelligents, auditable et sur mesure."
+    },
+    "hero": {
+      "eyebrow": "Solutions gouvernementales",
+      "title": "Le centre de commande IA pour des finances publiques plus intelligentes",
+      "subtitle": "Nous collaborons avec les agences gouvernementales de tous niveaux pour récupérer les revenus perdus et discipliner les dépenses publiques grâce à des modèles intelligents, auditable et construits sur mesure.",
+      "primaryCta": "Parler à un expert",
+      "secondaryCta": "Explorer nos solutions",
+      "trustedBy": "Approuvé par des institutions publiques au Canada"
+    },
+    "platform": {
+      "eyebrow": "Explorez votre centre de commande",
+      "title": "Une plateforme. Deux domaines de service.",
+      "subtitle": "Déployez une intelligence souveraine en quelques semaines, puis scalez la récupération de revenus et la rationalisation des dépenses sur une fondation de données unifiée."
+    },
+    "lifecycle": {
+      "eyebrow": "Protection de bout en bout",
+      "title": "Protégez les finances publiques à chaque étape",
+      "subtitle": "De la priorisation d'audit à la qualité des dépenses, nos modèles donnent aux agences les outils pour protéger les revenus et discipliner les dépenses sur tout le cycle.",
+      "steps": {
+        "audit": {
+          "title": "Fondation des données et priorisation d'audit",
+          "description": "Agrégation des sources de données de l'agence et identification des dossiers à haut risque avec des modèles explicables adaptés à votre cadre juridique."
+        },
+        "detect": {
+          "title": "Détection de fraude et d'anomalies",
+          "description": "Détection de sous-déclaration des ventes, incohérences de revenus, fraude douanière et anomalies de dépenses grâce à un scoring IA défendable en audit."
+        },
+        "enforce": {
+          "title": "Construction, déploiement et transfert",
+          "description": "Déploiement de modèles sur mesure dans votre environnement, affinage avec vos données et transfert complet à vos équipes."
+        },
+        "optimize": {
+          "title": "Qualité des dépenses et responsabilité",
+          "description": "Comparaison des dépenses de programmes aux résultats, identification des gaspillages avant qu'ils ne s'accumulent et soutien aux décisions budgétaires."
+        }
+      }
+    },
+    "why": {
+      "eyebrow": "Pourquoi iKwook",
+      "title": "Conçu pour ce que les fournisseurs génériques ne peuvent pas offrir",
+      "subtitle": "Les responsables des finances publiques ont besoin d'une IA explicable et souveraine, pas d'outils boîte noire qui ne survivent pas à un audit ou à un examen législatif.",
+      "pillars": {
+        "data": {
+          "label": "Données",
+          "title": "Détecter les risques avec une intelligence détenue par l'agence",
+          "description": "Nos modèles recoupent vos données opérationnelles, fiscales et tierces pour signaler les fuites de revenus et anomalies de dépenses que d'autres plateformes manquent.",
+          "link": "Explorer notre approche"
+        },
+        "compliance": {
+          "label": "Conformité",
+          "title": "Des décisions explicables que vos auditeurs peuvent défendre",
+          "description": "Chaque score est défendable. L'analyse par règles et par IA reste transparente, conforme et adaptable au cadre juridique de votre agence.",
+          "link": "En savoir plus sur la conformité"
+        },
+        "speed": {
+          "label": "Rapidité",
+          "title": "De la donnée à l'impact en semaines, pas en années",
+          "description": "Des déploiements sur mesure passent rapidement de l'audit de données aux modèles opérationnels, avec un accompagnement jusqu'au transfert à vos équipes.",
+          "link": "Voir le parcours de déploiement"
+        },
+        "sovereignty": {
+          "label": "Souveraineté",
+          "title": "Une IA souveraine qui reste sous votre contrôle",
+          "description": "Les modèles sont construits pour le contexte gouvernemental, déployés dans votre environnement et détenus par votre institution — pas enfermés dans un cloud fournisseur.",
+          "link": "Contacter notre équipe"
+        }
+      }
+    },
+    "solutionsDetail": {
+      "eyebrow": "Carte complète des capacités",
+      "title": "Chaque solution. Chaque cas d'usage.",
+      "subtitle": "Sept modèles sur mesure couvrant la maximisation des revenus et la rationalisation des dépenses, chacun avec une valeur mesurable."
+    },
+    "caseStudies": {
+      "eyebrow": "Impact prouvé",
+      "title": "Conçu pour les défis uniques du secteur public",
+      "quote": "Nos modèles donnent aux équipes d'application une intelligence actionnable et défendable — récupérer les revenus tout en renforçant la confiance du public.",
+      "cta": "Lire l'étude de cas"
+    },
+    "serviceAreas": {
+      "badge": "Services",
+      "title": "Nos deux domaines de service",
+      "revenue": {
+        "heading": "Récupérez ce qui est dû. Protégez les finances publiques.",
+        "intro": "Les gouvernements perdent chaque année des revenus significatifs à cause de la fraude, de la sous-déclaration et de l'évasion. Nos solutions de maximisation des revenus utilisent des modèles IA avancés pour détecter les anomalies et soutenir les équipes d'application."
+      },
+      "expenditure": {
+        "heading": "Dépensez mieux. Gaspillez moins. Servez davantage.",
+        "intro": "Les dépenses publiques sont sous surveillance constante. Au-delà de la réduction des budgets, les gouvernements ont besoin de moyens plus intelligents pour garantir que chaque dollar dépensé atteigne son objectif."
+      }
+    },
+    "revenue": {
+      "badge": "Maximisation des revenus",
+      "heading": "Récupérez ce qui est dû. Protégez les finances publiques.",
+      "intro": "Tous nos modèles sont conçus pour être explicables, conformes et adaptables au cadre juridique de votre agence.",
+      "solutions": {
+        "salesRevenue": {
+          "title": "Détection de fraude sur les revenus de ventes",
+          "description": "Les entreprises peuvent sous-déclarer leurs revenus de ventes pour réduire leurs obligations fiscales. Notre modèle analyse les chiffres d'affaires déclarés par rapport aux habitudes de consommation, aux références sectorielles, aux transactions fournisseurs et aux données d'emploi.",
+          "benefits": [
+            "Efficacité accrue des audits",
+            "Récupération de revenus fiscaux non déclarés",
+            "Effet dissuasif sur les contribuables non conformes"
+          ]
+        },
+        "incomeTax": {
+          "title": "Détection de fraude fiscale sur le revenu",
+          "description": "Notre modèle recoupe les revenus déclarés à partir de multiples sources dossiers d'emploi, transactions financières, indicateurs de style de vie et déclarations tierces pour identifier les incohérences avec l'activité économique observée.",
+          "benefits": [
+            "Déclarations de revenus plus précises",
+            "Meilleur ciblage des ressources d'audit",
+            "Réduction de l'écart fiscal"
+          ]
+        },
+        "profitBased": {
+          "title": "Détection de fraude sur les bénéfices",
+          "description": "La manipulation des bénéfices via la gonflement artificiel des coûts, les prix de transfert abusifs ou les transactions interentreprises est l'une des formes les plus sophistiquées d'évasion fiscale. Notre modèle examine les états financiers et les marges sectorielles.",
+          "benefits": [
+            "Détection de manipulations complexes des bénéfices",
+            "Soutien aux unités de surveillance des grands contribuables",
+            "Conformité fiscale des entreprises renforcée"
+          ]
+        },
+        "customs": {
+          "title": "Détection de fraude douanière",
+          "description": "La fraude douanière sous-évaluation des marchandises importées, mauvaise classification ou contrebande représente une source majeure de fuite de revenus. Nos modèles analysent les déclarations, les données d'expédition et les références de prix.",
+          "benefits": [
+            "Réduction des fuites de revenus douaniers",
+            "Priorisation plus intelligente des inspections frontalières",
+            "Conformité commerciale renforcée"
+          ]
+        }
+      }
+    },
+    "expenditure": {
+      "badge": "Rationalisation des dépenses",
+      "heading": "Dépensez mieux. Gaspillez moins. Servez davantage.",
+      "intro": "Nos solutions identifient la fraude, les pertes et les lacunes de qualité avant qu'elles ne s'accumulent en apportant l'intelligence IA aux achats, aux prestations et aux dépenses opérationnelles.",
+      "solutions": {
+        "expenditureFraud": {
+          "title": "Détection de fraude dans les dépenses",
+          "description": "De la fraude aux marchés publics à la fausse facturation, en passant par les abus de prestations et la manipulation de la paie, la fraude dans les dépenses draine les ressources publiques. Nos modèles analysent les schémas de transactions et les relations fournisseurs.",
+          "benefits": [
+            "Détection précoce de la fraude aux achats et paiements",
+            "Réduction de l'exposition aux abus de prestations et subventions",
+            "Contrôles internes renforcés"
+          ]
+        },
+        "lossDetection": {
+          "title": "Détection des pertes dans les dépenses publiques",
+          "description": "Toutes les pertes de dépenses ne sont pas frauduleuses, beaucoup résultent d'inefficacités, de duplications, de défaillances de processus ou d'une mauvaise gestion des contrats. Nos modèles identifient où les fonds publics sont dépensés sans valeur proportionnelle.",
+          "benefits": [
+            "Identification des dépenses gaspillées non frauduleuses",
+            "Meilleures décisions d'allocation des ressources",
+            "Efficacité des programmes améliorée"
+          ]
+        },
+        "spendingQuality": {
+          "title": "Amélioration de la qualité des dépenses",
+          "description": "Au-delà de détecter ce qui ne va pas, nous aidons les clients gouvernementaux à comprendre ce qu'est une bonne dépense. Nos modèles comparent les schémas de dépenses aux résultats de performance pour restructurer les budgets.",
+          "benefits": [
+            "Optimisation budgétaire basée sur les données",
+            "Responsabilité de performance renforcée",
+            "Meilleur alignement des dépenses avec les objectifs politiques"
+          ]
+        }
+      }
+    },
+    "businessCases": {
+      "badge": "Étude de cas",
+      "title": "Impact prouvé pour les institutions publiques",
+      "description": "Nos clients gouvernementaux s'appuient sur des modèles sur mesure qui produisent des résultats financiers mesurables.",
+      "cta": "Obtenir de l'aide",
+      "testimonial": {
+        "name": "Agence fiscale provinciale",
+        "role": "Client gouvernemental"
+      },
+      "cases": {
+        "case1": {
+          "title": "Récupération de revenus fiscaux",
+          "description": "Une agence fiscale provinciale a déployé notre modèle de détection de fraude sur les revenus de ventes pour prioriser les dossiers d'audit, avec des résultats mesurables de récupération de revenus non déclarés.",
+          "metric": "Efficacité d'audit et récupération de revenus accrues"
+        },
+        "case2": {
+          "title": "Optimisation des inspections douanières",
+          "description": "Une administration douanière nationale a intégré nos modèles de détection de fraude pour prioriser les déclarations d'importation à haut risque, améliorant les résultats aux frontières.",
+          "metric": "Priorisation d'inspection plus intelligente"
+        },
+        "case3": {
+          "title": "Responsabilité des dépenses publiques",
+          "description": "Un ministère a utilisé nos modèles de qualité des dépenses pour comparer les dépenses de programmes aux résultats.",
+          "metric": "Meilleur alignement des dépenses avec les objectifs politiques"
+        }
+      },
+      "stats": {
+        "stat1": { "value": "—", "label": "Revenus récupérés" },
+        "stat2": { "value": "—", "label": "Efficacité d'audit" }
+      }
+    },
+    "cta": {
+      "title": "Le centre de commande IA pour des finances publiques plus intelligentes",
+      "subtitle": "Réservez du temps avec nos experts pour discuter de la récupération de revenus, de la rationalisation des dépenses et du déploiement souverain pour votre agence.",
+      "primaryButton": "Demander un briefing exécutif",
+      "secondaryButton": "Parler à un expert"
+    },
+    "images": {
+      "hero": "Hero — visuel centre de commande, format 16:9 recommandé",
+      "platformRevenue": "Plateforme — tableau de bord maximisation des revenus",
+      "platformExpenditure": "Plateforme — tableau de bord rationalisation des dépenses",
+      "lifecycle": {
+        "audit": "Parcours — fondation des données et priorisation d'audit",
+        "detect": "Parcours — détection de fraude et d'anomalies",
+        "enforce": "Parcours — construction, déploiement et transfert",
+        "optimize": "Parcours — qualité des dépenses et responsabilité"
+      },
+      "solutions": {
+        "salesRevenue": "Solution — détection fraude revenus de ventes",
+        "incomeTax": "Solution — détection fraude fiscale sur le revenu",
+        "profitBased": "Solution — détection fraude sur les bénéfices",
+        "customs": "Solution — détection fraude douanière",
+        "expenditureFraud": "Solution — détection fraude dans les dépenses",
+        "lossDetection": "Solution — détection pertes dépenses publiques",
+        "spendingQuality": "Solution — amélioration qualité des dépenses"
+      },
+      "why": {
+        "data": "Pourquoi iKwook — intelligence détenue par l'agence",
+        "compliance": "Pourquoi iKwook — décisions explicables et auditable",
+        "speed": "Pourquoi iKwook — déploiement rapide",
+        "sovereignty": "Pourquoi iKwook — IA souveraine"
+      },
+      "caseStudies": {
+        "featured": "Étude de cas — arrière-plan citation vedette",
+        "case1": "Étude de cas — récupération revenus fiscaux",
+        "case2": "Étude de cas — optimisation inspections douanières",
+        "case3": "Étude de cas — responsabilité dépenses publiques"
+      },
+      "cta": "CTA — visuel briefing exécutif, format 21:9 recommandé"
+    }
+  },
+  "individuals": {
+    "meta": {
+      "title": "Votre avenir financier mérite une meilleure intelligence | iKwook",
+      "description": "Analyse financière par IA pour les particuliers — clarté, insight et outils pour prendre de meilleures décisions avec votre argent."
+    },
+    "hero": {
+      "eyebrow": "Solutions particuliers",
+      "title": "Votre avenir financier mérite une meilleure intelligence",
+      "subtitle": "Nous apportons la puissance de l'analyse financière par IA aux particuliers — pour vous donner la clarté, l'insight et les outils nécessaires à de meilleures décisions financières.",
+      "primaryCta": "Parler à un expert",
+      "secondaryCta": "Explorer nos services",
+      "trustedBy": "Conçu pour une clarté financière personnelle"
+    },
+    "services": {
+      "eyebrow": "Ce que nous offrons aux particuliers",
+      "title": "Une analyse plus intelligente. Des décisions plus claires.",
+      "subtitle": "Trois services conçus pour transformer vos données financières en intelligence actionnable — pas des conseils génériques.",
+      "items": {
+        "performance": {
+          "title": "Analyse de performance financière personnelle",
+          "heading": "Comprenez où va vraiment votre argent",
+          "description": "La plupart des gens gèrent leurs finances de façon réactive — en consultant leurs relevés après coup et en prenant des décisions sur la base d'une image incomplète. Notre service d'analyse financière personnelle construit un modèle complet de vos revenus, habitudes de dépenses et comportements financiers pour vous offrir une vue claire et structurée de votre santé financière — et des axes d'amélioration."
+        },
+        "opportunities": {
+          "title": "Identification d'opportunités financières",
+          "heading": "Trouvez la valeur que vous laissez sur la table",
+          "description": "Vos données financières recèlent des opportunités : frais inutiles, positions fiscales non optimisées, épargne non captée et comportements d'investissement perfectibles. Nous identifions ces opportunités avec précision et vous proposons des recommandations actionnables fondées sur vos propres données."
+        },
+        "modeling": {
+          "title": "Modélisation personnalisée d'amélioration financière",
+          "heading": "Un plan construit autour de vos chiffres, pas d'un modèle générique",
+          "description": "Nous n'offrons pas de conseils financiers génériques. Nous construisons un modèle adapté à votre situation — vos revenus, vos objectifs, votre profil de risque, vos obligations — et l'utilisons pour tracer un chemin réaliste vers vos objectifs de performance financière, qu'il s'agisse d'épargner, de réduire vos dettes ou de faire croître votre patrimoine."
+        }
+      }
+    },
+    "commitment": {
+      "eyebrow": "Notre engagement envers vous",
+      "title": "Intelligence de niveau entreprise, confidentialité personnelle",
+      "text": "La même qualité d'intelligence financière disponible pour les gouvernements et les grandes entreprises est désormais accessible pour vous. Nous traitons vos données financières avec les plus hauts standards de confidentialité, et chaque modèle que nous construisons vous appartient — expliqué clairement, transféré intégralement et conçu pour évoluer avec vous."
+    },
+    "approach": {
+      "eyebrow": "Cas d'usage",
+      "title": "Comment ça fonctionne ?",
+      "subtitle": "Notre approche — de vos données à un modèle que vous possédez et pouvez faire évoluer.",
+      "steps": {
+        "dataPrep": {
+          "title": "Analyse et préparation des données",
+          "description": "Nous identifions les sources de données disponibles et évaluons leur qualité, leur pertinence et leur potentiel. Si nécessaire, nous proposons la mise en place de nouvelles sources, la création d'entrepôts de données et le développement d'outils d'extraction, de transformation et d'intégration."
+        },
+        "modelDesign": {
+          "title": "Conception du modèle et définition des indicateurs",
+          "description": "Nous déterminons les solutions et modèles les mieux adaptés à vos objectifs. En collaboration avec vous, nous définissons les indicateurs clés de performance (KPI), les règles métier et les critères d'analyse propres à votre situation pour construire des modèles sur mesure."
+        },
+        "deployment": {
+          "title": "Déploiement et transfert de connaissances",
+          "description": "Nous implémentons la solution, l'intégrons dans votre environnement opérationnel et vous accompagnons lors de sa mise en production. Nous assurons également le transfert de connaissances pour que vous puissiez exploiter, maintenir et faire évoluer la solution selon vos besoins et l'évolution de vos données."
+        }
+      }
+    },
+    "cta": {
+      "title": "Votre avenir financier mérite une meilleure intelligence",
+      "subtitle": "Réservez du temps avec nos experts pour discuter d'analyse financière personnelle, d'identification d'opportunités et d'un modèle construit autour de vos chiffres.",
+      "primaryButton": "Commencer",
+      "secondaryButton": "Parler à un expert"
+    },
+    "images": {
+      "hero": "Hero — centre de commande finances personnelles, format 16:9 recommandé",
+      "services": {
+        "performance": "Service — analyse de performance financière personnelle",
+        "opportunities": "Service — identification d'opportunités financières",
+        "modeling": "Service — modélisation personnalisée d'amélioration"
+      },
+      "commitment": "Engagement — visuel confidentialité et propriété, format 21:9 recommandé",
+      "approach": {
+        "dataPrep": "Approche — analyse et préparation des données",
+        "modelDesign": "Approche — conception du modèle et définition des KPI",
+        "deployment": "Approche — déploiement et transfert de connaissances"
+      },
+      "cta": "CTA — visuel commencer, format 21:9 recommandé"
+    }
+  },
+  "business": {
+    "meta": {
+      "title": "Intelligence de performance financière pour les entreprises | iKwook",
+      "description": "Nous aidons les entreprises à découvrir les pertes cachées, récupérer les revenus inexploités et construire des modèles qui font de la performance financière un avantage concurrentiel."
+    },
+    "hero": {
+      "title": "Intelligence de performance financière pour les entreprises avant-gardistes",
+      "subtitle": "Nous aidons les entreprises à découvrir les pertes cachées, récupérer les revenus inexploités et construire les modèles qui font de la performance financière un avantage concurrentiel.",
+      "imageAlt": "Professionnel en entreprise utilisant un ordinateur portable"
+    },
+    "services": {
+      "title": "Nos solutions entreprises",
+      "valueDelivered": "Valeur apportée",
+      "solutions": {
+        "resourceLoss": {
+          "badge": "Détection des pertes et sous-utilisation des ressources",
+          "heading": "Arrêtez de perdre ce que vous possédez déjà",
+          "description1": "De nombreuses entreprises opèrent avec des pertes cachées significatives - matières gaspillées en production, actifs inutilisés, heures de main-d'œuvre mal allouées ou services rendus sans facturation. Ces pertes n'apparaissent rarement clairement dans les états financiers, mais s'accumulent en impact majeur sur les résultats.",
+          "description2": "Nos modèles de détection des pertes de ressources analysent vos données opérationnelles et financières pour identifier où la valeur s'échappe - que ce soit par le gaspillage physique, l'inefficacité des processus, la sous-utilisation des capacités ou les lacunes de facturation. Le résultat est une image claire et priorisée des valeurs récupérables et des actions à mener.",
+          "useCases": {
+            "u1": "Détection des pertes de fabrication et de production",
+            "u2": "Analyse de sous-utilisation des actifs et équipements",
+            "u3": "Identification des services non facturés et fuites de revenus",
+            "u4": "Modélisation de l'efficacité et de l'allocation de la main-d'œuvre"
+          },
+          "valueDelivered": {
+            "v1": "Vue quantifiée des pertes opérationnelles",
+            "v2": "Opportunités de récupération priorisées",
+            "v3": "Marge améliorée sans croissance du chiffre d'affaires"
+          }
+        },
+        "clientIntelligence": {
+          "badge": "Croissance des revenus par l'intelligence client",
+          "heading": "Développez vos revenus en comprenant mieux vos clients",
+          "description1": "La croissance des revenus ne consiste pas toujours à acquérir de nouveaux clients. Pour la plupart des entreprises, la plus grande opportunité réside dans le fait de mieux servir et fidéliser les clients qu'elles ont déjà - et de convertir les acheteurs occasionnels en relations récurrentes et loyales.",
+          "description2": "Nos modèles d'intelligence client analysent les historiques de transactions, les schémas d'engagement, les signaux comportementaux et les données de cycle de vie pour identifier vos clients à plus fort potentiel, prédire les risques de désabonnement et révéler les opportunités de renforcer les relations avec la bonne offre au bon moment.",
+          "useCases": {
+            "u1": "Identification des clients récurrents et modélisation de la valeur",
+            "u2": "Optimisation des programmes d'abonnement et de fidélité",
+            "u3": "Prédiction du churn et intervention précoce de rétention",
+            "u4": "Détection des opportunités de vente croisée et incitative"
+          },
+          "valueDelivered": {
+            "v1": "Valeur vie client plus élevée",
+            "v2": "Réduction du churn et amélioration des taux de rétention",
+            "v3": "Stratégies de croissance plus ciblées et efficaces"
+          }
+        }
+      }
+    },
+    "wcu": {
+      "badge": "Pourquoi les entreprises nous choisissent",
+      "text": "Nos clients entreprises ne cherchent pas des tableaux de bord. Ils cherchent des réponses. Nous construisons des modèles qui produisent une intelligence spécifique et actionnable, directement liée aux résultats financiers - et nous restons engagés jusqu'à ce que ces résultats soient réels.",
+      "highlights": {
+        "actionable": "Intelligence actionnable",
+        "outcomes": "Résultats financiers",
+        "engaged": "Engagés jusqu'à des résultats concrets"
+      },
+      "imageAlt": "Équipe collaborant autour d'un poste de travail"
+    },
+    "cases": {
+      "eyebrow": "Cas d'affaires",
+      "title": "Impact prouvé pour les équipes entreprises",
+      "subtitle": "Des scénarios réels où l'intelligence actionnable s'est traduite en résultats financiers mesurables - pas seulement des tableaux de bord.",
+      "challenge": "Défi :",
+      "solution": "Solution :",
+      "featured": {
+        "sector": "Manufacture",
+        "title": "Pertes de production cachées récupérées",
+        "challenge": "Un fabricant de taille moyenne perdait de la valeur à travers le gaspillage de matières, des actifs inutilisés et une main-d'œuvre mal allouée - des pertes qui n'apparaissaient jamais clairement dans les rapports financiers mensuels.",
+        "solution": "Nous avons déployé des modèles de détection des pertes de ressources sur la production, l'utilisation des actifs et les données d'allocation de la main-d'œuvre pour quantifier les fuites et prioriser les actions de récupération.",
+        "outcome": "Marge améliorée sans croissance du chiffre d'affaires",
+        "tags": {
+          "t1": "Détection des pertes",
+          "t2": "Efficacité des processus",
+          "t3": "Récupération de marge"
+        }
+      },
+      "secondary": {
+        "case1": {
+          "sector": "Commerce & Services",
+          "title": "Amélioration de la rétention client par l'intelligence",
+          "description": "Une entreprise de services multi-sites a utilisé des modèles d'intelligence client pour identifier les segments à risque de churn et déployer des offres de rétention ciblées au bon moment du cycle de vie.",
+          "outcome": "Valeur vie client plus élevée sur les segments récurrents",
+          "tags": {
+            "t1": "Intelligence client",
+            "t2": "Prédiction du churn",
+            "t3": "Rétention"
+          }
+        },
+        "case2": {
+          "sector": "Services professionnels",
+          "title": "Revenus non facturés identifiés et récupérés",
+          "description": "Une firme de services aux entreprises a découvert des travaux livrés mais jamais facturés en reliant les journaux d'activité opérationnelle aux données de facturation et de contrats.",
+          "outcome": "Services facturables récupérés, auparavant manqués en opérations",
+          "tags": {
+            "t1": "Fuite de revenus",
+            "t2": "Lacunes de facturation",
+            "t3": "Récupération"
+          }
+        }
+      }
+    }
+  },
+  "contact": {
+    "meta": {
+      "title": "Contactez iKwook | Intelligence de performance financière",
+      "description": "Contactez iKwook pour discuter de vos objectifs de performance financière - que vous représentiez une agence gouvernementale, dirigiez une entreprise ou soyez un particulier."
+    },
+    "hero": {
+      "title": "Parlons de vos objectifs de performance financière",
+      "subtitle": "Que vous représentiez une agence gouvernementale, dirigiez une entreprise ou soyez un particulier prêt à prendre le contrôle de vos finances - nous aimerions avoir de vos nouvelles."
+    },
+    "form": {
+      "badge": "Contactez-nous",
+      "title": "Avez-vous une question ?",
+      "subtitle": "Parlez-nous de votre organisation, de vos priorités et des résultats de performance financière que vous souhaitez atteindre. Notre équipe vous répondra avec les bonnes prochaines étapes.",
+      "fields": {
+        "firstName": "Prénom",
+        "name": "Nom",
+        "category": "Catégorie",
+        "categoryPlaceholder": "Sélectionnez une catégorie",
+        "country": "Pays",
+        "countryPlaceholder": "Sélectionnez un pays",
+        "mainInterest": "Intérêt principal",
+        "language": "Langue",
+        "email": "Adresse e-mail",
+        "phone": "Numéro de téléphone",
+        "subject": "Sujet / Brève description de vos besoins",
+        "message": "Message",
+        "submit": "Envoyer maintenant"
+      },
+      "categories": {
+        "governmentAgency": "Agence gouvernementale",
+        "revenueAuthority": "Administration fiscale",
+        "bank": "Banque / Institution financière",
+        "enterprise": "Entreprise"
+      },
+      "countries": {
+        "canada": "Canada",
+        "unitedStates": "États-Unis",
+        "france": "France",
+        "unitedKingdom": "Royaume-Uni",
+        "germany": "Allemagne",
+        "belgium": "Belgique",
+        "switzerland": "Suisse",
+        "senegal": "Sénégal",
+        "ivoryCoast": "Côte d'Ivoire",
+        "cameroon": "Cameroun",
+        "morocco": "Maroc",
+        "algeria": "Algérie",
+        "tunisia": "Tunisie",
+        "other": "Autre"
+      },
+      "interests": {
+        "revenueFraud": "Détection de fraude sur les revenus",
+        "incomeTaxFraud": "Détection de fraude fiscale sur le revenu",
+        "profitFraud": "Détection de fraude sur les bénéfices",
+        "customsFraud": "Détection de fraude douanière",
+        "expenditureRationalization": "Rationalisation des dépenses",
+        "expenditureFraud": "Détection de fraude dans les dépenses",
+        "publicSpendingLoss": "Détection des pertes dans les dépenses publiques",
+        "spendingQuality": "Amélioration de la qualité des dépenses",
+        "resourceLoss": "Détection des pertes et sous-utilisation des ressources",
+        "clientIntelligence": "Croissance des revenus par l'intelligence client",
+        "personalPerformance": "Analyse de performance financière personnelle",
+        "financialOpportunity": "Identification d'opportunités financières",
+        "personalModeling": "Modélisation personnalisée d'amélioration financière"
+      },
+      "languages": {
+        "english": "Anglais",
+        "french": "Français"
+      },
+      "cards": {
+        "companyName": {
+          "title": "Nom de l'entreprise",
+          "line1": "iKwook Inc"
+        },
+        "location": {
+          "title": "Adresse",
+          "line1": "173 rue Notre-Dame,",
+          "line2": "Winnipeg, Manitoba, Canada"
+        },
+        "email": {
+          "title": "E-mail",
+          "line1": "contact@ikwook.ca"
+        },
+        "phone": {
+          "title": "Téléphone",
+          "line1": "+1 204 698-9279"
+        }
+      }
+    }
+  },
+
+  "nav": {
+    "home": "Accueil",
+    "services": "Services",
+    "about": "À Propos",
+    "contact": "Contact",
+    "business": "Entreprises",
+    "governments": "Gouvernements",
+    "individuals": "Particuliers"
+  },
+  "hero": {
+    "title": "Construire le Futur avec Innovation",
+    "subtitle": "Nous créons des solutions numériques de pointe qui transforment les entreprises et stimulent la croissance",
+    "cta": "Commencer",
+    "learnMore": "En Savoir Plus",
+    "badge": "Prêt à innover"
+  },
+  "services": {
+    "title": "Nos Services",
+    "subtitle": "Des solutions complètes adaptées à vos besoins",
+    "digital": "Transformation Digitale",
+    "digital_desc": "Modernisez votre entreprise avec des stratégies numériques de pointe",
+    "web": "Développement Web",
+    "web_desc": "Créez des applications web puissantes et évolutives",
+    "mobile": "Solutions Mobiles",
+    "mobile_desc": "Applications mobiles natives et multiplateformes",
+    "ai": "IA et Apprentissage Automatique",
+    "ai_desc": "Utilisez l'IA pour optimiser et automatiser vos processus",
+    "consulting": "Conseil IT",
+    "consulting_desc": "Conseils d'experts pour votre feuille de route technologique"
+  },
+  "about": {
+    "title": "À Propos",
+    "subtitle": "Passionnés par la technologie et l'innovation",
+    "text": "Nous sommes une équipe de développeurs, designers et innovateurs passionnés dédiés à la création d'expériences numériques exceptionnelles. Avec des années d'expérience dans l'industrie, nous combinons l'expertise technique avec la pensée créative pour offrir des solutions qui font la différence.",
+    "mission": "Notre Mission",
+    "vision": "Notre Vision",
+    "mission_text": "Innover pour réussir",
+    "vision_text": "Un avenir numérique"
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "subtitle": "Discutons de la façon dont nous pouvons vous aider",
+    "name": "Nom",
+    "email": "Email",
+    "message": "Message",
+    "send": "Envoyer",
+    "phone": "Téléphone",
+    "address": "Adresse",
+    "sending": "Envoi...",
+    "sent": "Message envoyé !"
+  },
+  "footer": {
+    "rights": "Tous droits réservés",
+    "quickLinks": "Liens rapides",
+    "followUs": "Suivez-nous",
+    "privacy": "Confidentialité",
+    "terms": "Conditions"
+  },
+  "stats": {
+    "projects": "Projets",
+    "clients": "Clients",
+    "years": "Années"
+  },
+  "nav": {
+    "home": "Accueil",
+    "performance": "Performance",
+    "solutions": "Solutions",
+    "methodology": "Méthodologie",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Débloquez la Performance Financière",
+    "subtitle": "Des modèles d'IA personnalisés qui aident les gouvernements, les entreprises et les particuliers à maximiser les revenus, réduire les pertes, détecter la fraude et optimiser l'intelligence.",
+    "cta": "PARLER À UN EXPERT",
+    "proposal": "Demander une Proposition"
+  },
+  "performance": {
+    "title": "Performance",
+    "badge": "TRADERAI"
+  },
+  "scale": {
+    "title": "Conçu pour Toutes les Échelles",
+    "subtitle": "Nos modèles d'intelligence sont spécifiquement adaptés aux défis uniques des secteurs publics, des entreprises mondiales et des fortunes privées."
+  },
+  "governments": {
+    "title": "Gouvernements",
+    "description": "Intelligence de niveau souverain pour la maximisation des revenus et la détection de fraude.",
+    "features": [
+      "Détection de Fraude Fiscale et Douanière",
+      "Prévention des Fuites de Revenus",
+      "Rationalisation des Dépenses"
+    ],
+    "cta": "Explorer les Solutions"
+  },
+  "enterprises": {
+    "title": "Entreprises",
+    "description": "Donnez à votre CFO des modèles d'apprentissage profond qui prédisent le taux de désabonnement et identifient les anomalies.",
+    "features": [
+      "Prédiction du Taux de Désabonnement",
+      "Analyses Avancées des Revenus",
+      "Détection d'Anomalies et de Pertes"
+    ],
+    "cta": "Explorer les Solutions"
+  },
+  "individuals": {
+    "title": "Particuliers",
+    "description": "Des outils d'optimisation de patrimoine premium auparavant réservés aux clients institutionnels.",
+    "features": [
+      "Modélisation Financière Personnalisée",
+      "Intelligence et Insights Patrimoniaux",
+      "Moteur d'Optimisation Budgétaire"
+    ],
+    "cta": "Explorer les Solutions"
+  },
+  "intelligence": {
+    "title": "Une Intelligence qui s'Adapte en Temps Réel",
+    "points": [
+      {
+        "title": "Découverte de Précision",
+        "description": "Nos modèles ingèrent des billions de points de données pour trouver les signaux que d'autres manquent."
+      },
+      {
+        "title": "Architecture Neuronale",
+        "description": "Des structures d'apprentissage profond sophistiquées qui reflètent des écosystèmes financiers complexes."
+      },
+      {
+        "title": "Résultats Actionnables",
+        "description": "Nous ne fournissons pas seulement des données ; nous fournissons des améliorations financières claires et mesurables."
+      }
+    ],
+    "methodology": "Notre Méthodologie Propriétaire",
+    "discover": "Découvrir",
+    "discover_desc": "Nous cartographions votre écosystème financier et identifions les zones clés de friction et de fuite de revenus.",
+    "model": "Modéliser",
+    "model_desc": "Nos ingénieurs construisent des réseaux neuronaux personnalisés entraînés spécifiquement sur vos données.",
+    "deploy": "Déployer & Mesurer",
+    "deploy_desc": "Intégration transparente dans votre ERP existant avec suivi KPI en temps réel et optimisation."
+  },
+  "stats": {
+    "capital": "CAPITAL PROTÉGÉ",
+    "accuracy": "DE PLUS ACQUIS",
+    "certified": "CERTIFIÉ TYPE II",
+    "latency": "LATENCE DE RÉPONSE"
+  },
+  "team": {
+    "title": "Dirigé par des Visionnaires Financiers",
+    "description": "Notre équipe est composée de chercheurs Ph.D., d'anciens banquiers centraux et d'ingénieurs logiciels de classe mondiale dédiés à la science de la maximisation de la richesse."
+  },
+  "footer": {
+    "rights": "Tous droits réservés",
+    "privacy": "Politique de Confidentialité",
+    "terms": "Conditions d'Utilisation"
+  }
+
+}
