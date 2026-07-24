@@ -149,3 +149,8 @@
     @apply font-sans;
   }
 }
+/* Fundraising campaigns: horizontal snap carousel with a discreet, usable scrollbar. */
+.campaign-scroll{scrollbar-width:thin;scrollbar-color:#df9200 #ffffff14;overscroll-behavior-inline:contain}
+.campaign-scroll::-webkit-scrollbar{height:5px}
+.campaign-scroll::-webkit-scrollbar-track{background:#ffffff14}
+.campaign-scroll::-webkit-scrollbar-thumb{background:#df9200}
