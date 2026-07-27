@@ -22,7 +22,7 @@ export default function IntelligenceSection() {
                     className="relative"
                 >
                     <div className="absolute -inset-10 rounded-full bg-cyan-100/60 blur-3xl" />
-                    <div className="relative overflow-hidden rounded-lg shadow-2xl shadow-slate-300">
+                    <div className="relative overflow-hidden rounded shadow-2xl shadow-slate-300">
                         <Image
                             src="/generated/financial-intelligence-workstation.png"
                             alt="Financial AI workstation with abstract market analytics"
@@ -56,7 +56,7 @@ export default function IntelligenceSection() {
                                     transition={{ duration: 0.55, delay: 0.15 + index * 0.08 }}
                                     className="grid grid-cols-[64px_1fr] gap-7"
                                 >
-                                    <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-slate-100 bg-white shadow-lg shadow-slate-200/70">
+                                    <div className="flex h-16 w-16 items-center justify-center rounded border border-slate-100 bg-white shadow-lg shadow-slate-200/70">
                                         <Icon className="h-7 w-7 text-[#123a56]" />
                                     </div>
                                     <div>

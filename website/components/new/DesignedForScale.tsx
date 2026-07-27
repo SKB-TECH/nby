@@ -43,9 +43,9 @@ export default function DesignedForScale() {
                                 viewport={{ once: true, margin: "-90px" }}
                                 transition={{ duration: 0.65, delay: index * 0.12 }}
                                 whileHover={{ y: -8 }}
-                                className="rounded-lg border border-white/5 bg-white/[0.06] p-9 shadow-2xl shadow-black/20 transition-colors hover:bg-white/[0.08]"
+                                className="rounded border border-white/5 bg-white/[0.06] p-9 shadow-2xl shadow-black/20 transition-colors hover:bg-white/[0.08]"
                             >
-                                <div className="mb-9 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-[#123a56] to-cyan-500 shadow-lg shadow-cyan-900/25">
+                                <div className="mb-9 flex h-16 w-16 items-center justify-center rounded bg-gradient-to-br from-[#123a56] to-cyan-500 shadow-lg shadow-cyan-900/25">
                                     <Icon className="h-8 w-8 text-white" />
                                 </div>
 

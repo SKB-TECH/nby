@@ -81,7 +81,7 @@ export default function AppointmentBooking({ copy }: { copy: ContactCopy }) {
                         <p className="mt-4 text-xs text-slate-400">{copy.duration}</p>
                     </Step>
                     <Step title={copy.details} icon={UserRound}>
-                        <div className="grid gap-4 sm:grid-cols-2"><Field name="firstName" label={copy.firstName} required /><Field name="lastName" label={copy.lastName} required /><Field name="email" label={copy.email} type="email" required /><Field name="phone" label={copy.phone} type="tel" required /><label className="sm:col-span-2 text-xs font-bold uppercase tracking-wide text-slate-500">{copy.note}<textarea name="note" className="mt-2 min-h-28 w-full rounded-lg border border-slate-200 p-4 text-sm font-normal normal-case outline-none focus:border-[#df9200]" /></label></div>
+                        <div className="grid gap-4 sm:grid-cols-2"><Field name="firstName" label={copy.firstName} required /><Field name="lastName" label={copy.lastName} required /><Field name="email" label={copy.email} type="email" required /><Field name="phone" label={copy.phone} type="tel" required /><label className="sm:col-span-2 text-xs font-bold uppercase tracking-wide text-slate-500">{copy.note}<textarea name="note" className="mt-2 min-h-28 w-full rounded border border-slate-200 p-4 text-sm font-normal normal-case outline-none focus:border-[#df9200]" /></label></div>
                     </Step>
                 </div>
                 <aside className="sticky top-24 rounded bg-[#0d182b] p-7 text-white shadow-xl"><h2 className="font-serif text-2xl">{copy.summary}</h2>{type && date && selectedSlot ? <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mt-6 space-y-4"><Summary icon={UserRound} text={type} /><Summary icon={CalendarDays} text={selectedDateLabel} /><Summary icon={Clock3} text={`${new Intl.DateTimeFormat(locale, { hour: "2-digit", minute: "2-digit", timeZone: "Africa/Kinshasa" }).format(new Date(selectedSlot.startsAt))} · 30 min`} /></motion.div> : <p className="mt-5 text-sm leading-6 text-white/50">{copy.noSelection}</p>}{error && <p className="mt-5 bg-red-500/15 p-3 text-xs leading-5 text-red-200">{error}</p>}<button type="submit" disabled={!type || !date || !time || submitting} className="mt-7 h-13 w-full bg-[#df9200] text-xs font-bold uppercase tracking-wider text-white transition disabled:cursor-not-allowed disabled:opacity-35">{submitting ? "Enregistrement…" : copy.reserve}</button><p className="mt-5 flex gap-2 text-[11px] leading-5 text-white/45"><LockKeyhole className="h-4 w-4 shrink-0 text-[#f0a40b]" />{copy.privacy}</p></aside>
@@ -91,15 +91,15 @@ export default function AppointmentBooking({ copy }: { copy: ContactCopy }) {
 }
 
 function Step({ title, icon: Icon, children }: { title: string; icon: typeof UserRound; children: React.ReactNode }) {
-    return <motion.section initial={{ opacity: 0, y: 22 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="rounded-2xl bg-white p-6 shadow-sm sm:p-8"><h2 className="mb-6 flex items-center gap-3 font-serif text-2xl"><Icon className="h-5 w-5 text-[#df9200]" />{title}</h2>{children}</motion.section>;
+    return <motion.section initial={{ opacity: 0, y: 22 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="rounded bg-white p-6 shadow-sm sm:p-8"><h2 className="mb-6 flex items-center gap-3 font-serif text-2xl"><Icon className="h-5 w-5 text-[#df9200]" />{title}</h2>{children}</motion.section>;
 }
 
 function ChoiceButton({ active, onClick, children }: { active: boolean; onClick: () => void; children: React.ReactNode }) {
-    return <motion.button type="button" whileHover={{ y: -2 }} whileTap={{ scale: .97 }} onClick={onClick} className={`min-h-12 rounded-lg border px-4 py-3 text-sm font-bold transition ${active ? "border-[#df9200] bg-[#fff0cf] text-[#9d6200]" : "border-slate-200 bg-white text-slate-600 hover:border-[#df9200]"}`}>{children}</motion.button>;
+    return <motion.button type="button" whileHover={{ y: -2 }} whileTap={{ scale: .97 }} onClick={onClick} className={`min-h-12 rounded border px-4 py-3 text-sm font-bold transition ${active ? "border-[#df9200] bg-[#fff0cf] text-[#9d6200]" : "border-slate-200 bg-white text-slate-600 hover:border-[#df9200]"}`}>{children}</motion.button>;
 }
 
 function Field({ name, label, type = "text", required = false }: { name: string; label: string; type?: string; required?: boolean }) {
-    return <label className="text-xs font-bold uppercase tracking-wide text-slate-500">{label}<input name={name} type={type} required={required} className="mt-2 h-12 w-full rounded-lg border border-slate-200 px-4 text-sm font-normal normal-case outline-none focus:border-[#df9200]" /></label>;
+    return <label className="text-xs font-bold uppercase tracking-wide text-slate-500">{label}<input name={name} type={type} required={required} className="mt-2 h-12 w-full rounded border border-slate-200 px-4 text-sm font-normal normal-case outline-none focus:border-[#df9200]" /></label>;
 }
 
 function Summary({ icon: Icon, text }: { icon: typeof UserRound; text: string }) {

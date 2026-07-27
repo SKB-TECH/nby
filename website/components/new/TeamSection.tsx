@@ -21,7 +21,7 @@ export default function TeamSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-90px" }}
                 transition={{ duration: 0.7 }}
-                className="mx-auto max-w-[1420px] rounded-[48px] border border-white/10 bg-white/[0.06] px-8 py-12 shadow-2xl shadow-black/20 lg:px-16"
+                className="mx-auto max-w-[1420px] rounded border border-white/10 bg-white/[0.06] px-8 py-12 shadow-2xl shadow-black/20 lg:px-16"
             >
                 <div className="grid items-center gap-10 lg:grid-cols-[280px_1fr_auto]">
                     <div className="flex justify-center lg:justify-start">
@@ -50,7 +50,7 @@ export default function TeamSection() {
 
                     <Link
                         href="/contact"
-                        className="inline-flex h-16 items-center justify-center rounded-lg border border-cyan-200 bg-white px-10 text-lg font-extrabold text-cyan-400 shadow-lg shadow-cyan-950/20 transition hover:bg-cyan-50"
+                        className="inline-flex h-16 items-center justify-center rounded border border-cyan-200 bg-white px-10 text-lg font-extrabold text-cyan-400 shadow-lg shadow-cyan-950/20 transition hover:bg-cyan-50"
                     >
                         {copy.primary}
                     </Link>

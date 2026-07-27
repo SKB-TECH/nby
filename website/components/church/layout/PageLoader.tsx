@@ -24,7 +24,7 @@ export default function PageLoader({ overlay = false }: { overlay?: boolean }) {
                     initial={{ opacity: 0, scale: .85 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: .45 }}
-                    className="relative overflow-hidden rounded-2xl border border-white/10 shadow-2xl"
+                    className="relative overflow-hidden rounded border border-white/10 shadow-2xl"
                 >
                     <Image src="/church/nby-logo.jpg" alt="NBY" width={112} height={112} priority className="h-28 w-28 object-cover" />
                 </motion.div>

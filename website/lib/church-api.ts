@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:4000/api/v1";
+const API_URL = "/api/nby";
 
 export type PublicActivity = {
   id: string;
@@ -25,6 +25,17 @@ export type PublicSermon = {
   thumbnailUrl?: string;
   description?: string;
   live: boolean;
+};
+
+export type PublicPraiseVideo = {
+  id: string;
+  title: string;
+  description?: string;
+  videoUrl: string;
+  thumbnailUrl?: string;
+  locale: string;
+  sortOrder: number;
+  featured: boolean;
 };
 
 export type PublicContentEntry = {
@@ -56,6 +67,7 @@ export type PublicAppointmentSlot = {
 export type PublicSiteData = {
   content: PublicContentEntry[];
   sermons: PublicSermon[];
+  praiseVideos: PublicPraiseVideo[];
   activities: PublicActivity[];
   campaigns: PublicCampaign[];
 };

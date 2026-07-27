@@ -4,8 +4,6 @@ COPY package.json ./
 RUN corepack enable && corepack install
 RUN pnpm install --frozen-lockfile=false
 COPY . .
-ARG NEXT_PUBLIC_API_URL
-ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
 RUN pnpm build
 
 FROM node:22-alpine AS runner

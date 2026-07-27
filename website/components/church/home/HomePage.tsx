@@ -7,10 +7,10 @@ import EventsSection from "./EventsSection";
 import DnaSection from "./DnaSection";
 import MinistriesSection from "./MinistriesSection";
 import SermonSection from "./SermonSection";
-import PrayerSection from "./PrayerSection";
-import GivingSection from "./GivingSection";
 import VisitSection from "./VisitSection";
-import { contentText, plainText, usePublicSiteData } from "@/lib/church-api";
+import PrayerProphecySection from "./PrayerProphecySection";
+import PraiseVideoSection from "./PraiseVideoSection";
+import { contentText, usePublicSiteData } from "@/lib/church-api";
 
 const copy = {
     fr: {
@@ -29,12 +29,20 @@ const copy = {
         pastor: "Prophète Cedu Mbuma",
         pastorRole: "Prophète et responsable principal",
         learn: "Découvrir notre histoire",
+        intensePrayerEyebrow: "Dans la présence de Dieu",
+        intensePrayerTitle: "Des moments intenses de prière et de prophétie.",
+        intensePrayerText: "À NBY, nous prenons le temps de chercher Dieu avec profondeur. Dans une atmosphère de foi, la prière prépare les cœurs, la Parole éclaire les vies et la voix prophétique apporte direction, consolation et restauration.",
+        prayerMomentTitle: "Une prière fervente",
+        prayerMomentText: "Des temps de consécration, d’intercession et de combat spirituel où chacun peut rencontrer Dieu personnellement.",
+        prophecyMomentTitle: "Une parole prophétique",
+        prophecyMomentText: "Un ministère exercé avec discernement pour édifier, exhorter, consoler et révéler le cœur de Dieu.",
+        intensePrayerQuote: "La prière nous place devant Dieu ; la prophétie communique son cœur à son peuple.",
         eventsEyebrow: "Les programmes de NBY",
         eventsTitle: "Nos cultes chaque semaine",
         events: [
             ["CHAQUE MERCREDI · 16H30–19H30", "Culte du surnaturel", "Un temps de prophétie, de prière, d’enseignement et de manifestation de la puissance de Dieu."],
             ["CHAQUE VENDREDI · 16H30–19H30", "Culte du surnaturel", "Une rencontre dans la présence de Dieu consacrée à la délivrance, aux miracles et à la restauration."],
-            ["CHAQUE DIMANCHE · 9H30–12H30", "Culte dominical", "Le grand rassemblement de la famille NBY pour la louange, la Parole, la communion et le ministère."],
+            ["CHAQUE DIMANCHE · 9H30–11H30", "Culte dominical", "Le grand rassemblement de la famille NBY pour la louange, la Parole, la communion et le ministère."],
         ],
         dnaTitle: "Les trois piliers de NBY",
         dna: [
@@ -88,12 +96,20 @@ const copy = {
         pastor: "Prophet Cedu Mbuma",
         pastorRole: "Prophet and lead pastor",
         learn: "Discover our story",
+        intensePrayerEyebrow: "In God’s presence",
+        intensePrayerTitle: "Powerful moments of prayer and prophecy.",
+        intensePrayerText: "At NBY, we take time to seek God deeply. In an atmosphere of faith, prayer prepares hearts, the Word brings light, and the prophetic voice offers direction, comfort and restoration.",
+        prayerMomentTitle: "Fervent prayer",
+        prayerMomentText: "Times of consecration, intercession and spiritual warfare where everyone can encounter God personally.",
+        prophecyMomentTitle: "A prophetic word",
+        prophecyMomentText: "Ministry exercised with discernment to build up, encourage, comfort and reveal the heart of God.",
+        intensePrayerQuote: "Prayer brings us before God; prophecy communicates his heart to his people.",
         eventsEyebrow: "NBY weekly program",
         eventsTitle: "Our weekly services",
         events: [
             ["EVERY WEDNESDAY · 4:30–7:30 PM", "Supernatural Service", "A time of prophecy, prayer, teaching and manifestation of God’s power."],
             ["EVERY FRIDAY · 4:30–7:30 PM", "Supernatural Service", "A gathering in God’s presence dedicated to deliverance, miracles and restoration."],
-            ["EVERY SUNDAY · 9:30 AM–12:30 PM", "Sunday Service", "The NBY family gathering for worship, the Word, fellowship and ministry."],
+            ["EVERY SUNDAY · 9:30–11:30 AM", "Sunday Service", "The NBY family gathering for worship, the Word, fellowship and ministry."],
         ],
         dnaTitle: "The three pillars of NBY",
         dna: [
@@ -139,28 +155,23 @@ export default function ChurchHomePage() {
     const locale = useLocale() === "en" ? "en" : "fr";
     const base = copy[locale];
     const { data } = usePublicSiteData(locale);
-    const dynamicEvents = data?.activities.slice(0, 3).map(activity => {
-        const start = new Date(activity.startsAt);
-        const schedule = new Intl.DateTimeFormat(locale, { weekday: "long", day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" }).format(start).toUpperCase();
-        return [schedule, activity.title, plainText(activity.description)] as const;
-    });
     const c = {
         ...base,
         title: contentText(data?.content, "home.hero.title", base.title),
         subtitle: contentText(data?.content, "home.hero.subtitle", base.subtitle),
         welcomeTitle: contentText(data?.content, "home.welcome.title", base.welcomeTitle),
         welcomeText: contentText(data?.content, "home.welcome.text", base.welcomeText),
-        events: dynamicEvents ?? [],
+        events: base.events,
     } as unknown as HomeCopy;
 
     return (
         <div className="bg-[#fbfaf6] text-[#172033]">
             <HeroSection copy={c} />
             <WelcomeSection copy={c} />
+            <PrayerProphecySection copy={c} />
             <EventsSection copy={c} />
             <DnaSection copy={c} />
-            <PrayerSection copy={c} />
-            <GivingSection copy={c} />
+            <PraiseVideoSection copy={c} videos={data?.praiseVideos ?? []} />
             <VisitSection copy={c} />
         </div>
     );

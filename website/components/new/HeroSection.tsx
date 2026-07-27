@@ -94,10 +94,10 @@ function SignalCard({
             initial={{ opacity: 0, y: 18, scale: 0.96 }}
             animate={{ opacity: 1, y: [0, -10, 0], scale: 1 }}
             transition={{ duration: 5, repeat: Infinity, repeatType: "mirror", ease: "easeInOut" }}
-            className={`absolute hidden rounded-2xl border border-white/10 bg-white/[0.11] p-4 text-white shadow-2xl shadow-black/30 backdrop-blur-xl lg:block ${className}`}
+            className={`absolute hidden rounded border border-white/10 bg-white/[0.11] p-4 text-white shadow-2xl shadow-black/30 backdrop-blur-xl lg:block ${className}`}
         >
             <div className="flex items-center gap-4">
-                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#123a56]/40 text-cyan-300">
+                <span className="flex h-12 w-12 items-center justify-center rounded bg-[#123a56]/40 text-cyan-300">
                     <Icon className="h-5 w-5" />
                 </span>
                 <span>
@@ -159,13 +159,13 @@ export default function HeroSection() {
                         >
                             <a
                                 href="#contact"
-                                className="inline-flex h-16 items-center justify-center rounded-lg bg-[#123a56] px-10 text-lg font-extrabold text-white shadow-2xl shadow-cyan-600/30 transition hover:bg-[#0f2f47]"
+                                className="inline-flex h-16 items-center justify-center rounded bg-[#123a56] px-10 text-lg font-extrabold text-white shadow-2xl shadow-cyan-600/30 transition hover:bg-[#0f2f47]"
                             >
                                 {copy.primary}
                             </a>
                             <a
                                 href="#methodology"
-                                className="inline-flex h-16 items-center justify-center rounded-lg border border-white/18 bg-white/[0.04] px-10 text-lg font-extrabold text-white transition hover:bg-white/10"
+                                className="inline-flex h-16 items-center justify-center rounded border border-white/18 bg-white/[0.04] px-10 text-lg font-extrabold text-white transition hover:bg-white/10"
                             >
                                 {copy.secondary}
                             </a>
@@ -183,8 +183,8 @@ export default function HeroSection() {
                             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
                             className="absolute inset-0 flex items-center justify-center"
                         >
-                            <div className="relative flex h-72 w-72 items-center justify-center rounded-[44px] border border-white/10 bg-white/[0.12] shadow-2xl shadow-cyan-950/60 backdrop-blur-xl">
-                                <div className="absolute inset-0 rounded-[44px] bg-gradient-to-br from-white/10 to-cyan-400/5" />
+                            <div className="relative flex h-72 w-72 items-center justify-center rounded border border-white/10 bg-white/[0.12] shadow-2xl shadow-cyan-950/60 backdrop-blur-xl">
+                                <div className="absolute inset-0 rounded bg-gradient-to-br from-white/10 to-cyan-400/5" />
                                 <Activity className="relative h-36 w-36 stroke-[1.8] text-cyan-300 drop-shadow-[0_0_28px_rgba(34,211,238,0.55)]" />
                             </div>
                         </motion.div>
@@ -251,9 +251,9 @@ export default function HeroSection() {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true, margin: "-60px" }}
                                     transition={{ duration: 0.5, delay: index * 0.06 }}
-                                    className="group grid min-h-[92px] grid-cols-[42px_1fr] gap-4 rounded-lg border border-slate-200 bg-white p-4 text-left shadow-[0_14px_34px_rgba(15,47,71,0.08)] transition hover:-translate-y-1 hover:border-cyan-200 hover:shadow-[0_18px_44px_rgba(15,47,71,0.12)]"
+                                    className="group grid min-h-[92px] grid-cols-[42px_1fr] gap-4 rounded border border-slate-200 bg-white p-4 text-left shadow-[0_14px_34px_rgba(15,47,71,0.08)] transition hover:-translate-y-1 hover:border-cyan-200 hover:shadow-[0_18px_44px_rgba(15,47,71,0.12)]"
                                 >
-                                    <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-cyan-50 text-[#123a56] transition group-hover:bg-[#123a56] group-hover:text-white">
+                                    <span className="flex h-10 w-10 items-center justify-center rounded bg-cyan-50 text-[#123a56] transition group-hover:bg-[#123a56] group-hover:text-white">
                                         <Icon className="h-5 w-5" />
                                     </span>
                                     <span>

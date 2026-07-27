@@ -49,7 +49,7 @@ export default function ContactInfo({ copy }: { copy: ContactCopy }) {
                                 whileHover={{ y: -6 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: .45, delay: index * .07 }}
-                                className={`group min-h-[230px] overflow-hidden rounded-2xl border p-7 shadow-sm transition ${
+                                className={`group min-h-[230px] overflow-hidden rounded border p-7 shadow-sm transition ${
                                     item.featured
                                         ? "border-[#071117] bg-[#071117] shadow-xl lg:col-span-1"
                                         : "border-white bg-white hover:border-[#df9200]/35 hover:shadow-xl"
@@ -61,7 +61,7 @@ export default function ContactInfo({ copy }: { copy: ContactCopy }) {
                     })}
                 </div>
 
-                <div className="mt-7 flex flex-col items-center justify-between gap-4 rounded-2xl border border-[#df9200]/15 bg-white/60 px-6 py-5 text-center text-xs text-slate-500 backdrop-blur sm:flex-row sm:text-left">
+                <div className="mt-7 flex flex-col items-center justify-between gap-4 rounded border border-[#df9200]/15 bg-white/60 px-6 py-5 text-center text-xs text-slate-500 backdrop-blur sm:flex-row sm:text-left">
                     <span>{fr ? "Besoin d’aide pour votre réservation ?" : "Need help with your booking?"}</span>
                     <a href="tel:+243819744334" className="font-black uppercase tracking-wider text-[#9d6200] transition hover:text-[#df9200]">
                         {fr ? "Appelez notre équipe" : "Call our team"} →

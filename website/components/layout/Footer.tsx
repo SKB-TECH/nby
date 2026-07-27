@@ -49,7 +49,7 @@ export default function Footer() {
             <div className="relative mx-auto grid max-w-[1180px] gap-12 px-5 py-16 sm:px-8 md:grid-cols-2 lg:grid-cols-[1.15fr_.7fr_1.15fr_1.2fr]">
                 <div>
                     <Link href="/" className="inline-flex items-center gap-4">
-                        <Image src="/church/nby-logo.jpg" alt="NBY — Nzambe Ba Lukaka Ye" width={88} height={88} className="h-20 w-20 rounded-xl object-cover shadow-xl" />
+                        <Image src="/church/nby-logo.jpg" alt="NBY — Nzambe Ba Lukaka Ye" width={88} height={88} className="h-20 w-20 rounded object-cover shadow-xl" />
                         <span><strong className="block text-lg font-black uppercase text-white">NBY</strong><small className="mt-1 block text-[10px] font-bold uppercase tracking-[.16em] text-[#f0a40b]">Nzambe Ba Lukaka Ye</small></span>
                     </Link>
                     <p className="mt-6 max-w-xs text-sm leading-7">

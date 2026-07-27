@@ -96,7 +96,7 @@ export default function LanguageSwitcher({
 
             <DropdownMenuContent
                 align="end"
-                className="w-56 rounded-lg border border-slate-200 bg-white p-2 shadow-lg shadow-slate-900/10"
+                className="w-56 rounded border border-slate-200 bg-white p-2 shadow-lg shadow-slate-900/10"
             >
                 {languages.map((lang) => {
                     const active = locale === lang.code;

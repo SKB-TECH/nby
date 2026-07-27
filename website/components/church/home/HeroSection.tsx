@@ -11,8 +11,10 @@ const churchColors: [string, string, string] = ["#fff4d6", "#f0a40b", "#ffffff"]
 export default function HeroSection({ copy: c }: { copy: HomeCopy }) {
     return (
         <section className="relative min-h-[690px] overflow-hidden">
-            <Image src="/church/hero-sanctuary.png" alt="Sanctuaire de l’église pendant un rassemblement" fill priority className="object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#071117]/90 via-[#071117]/55 to-[#071117]/15" />
+            <motion.div initial={{ scale: 1.04 }} animate={{ scale: 1 }} transition={{ duration: 1.8, ease: "easeOut" }} className="absolute inset-0">
+                <Image src="/church/nby-service-hero.jpeg" alt="Culte NBY à la Cité du Surnaturel" fill priority sizes="100vw" className="object-cover object-[center_42%]" />
+            </motion.div>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#071117]/92 via-[#071117]/58 to-[#071117]/20" />
             <ThreeBackground className="pointer-events-none absolute inset-0 z-[3] opacity-90 mix-blend-screen" colors={churchColors} glowColor="#f0a40b" particleCount={1400} particleSize={0.22} speed={0.48} />
             <motion.div aria-hidden="true" animate={{ opacity: [0.2, 0.46, 0.2], scale: [0.94, 1.08, 0.94] }} transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut" }} className="pointer-events-none absolute right-[18%] top-[10%] z-[2] h-80 w-80 rounded-full bg-[#f0a40b]/25 blur-[100px]" />
             <motion.div aria-hidden="true" animate={{ opacity: [0.08, 0.24, 0.08], x: [-18, 18, -18] }} transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }} className="pointer-events-none absolute -top-24 right-[30%] z-[2] h-[720px] w-24 rotate-12 bg-gradient-to-b from-white/45 via-[#f0a40b]/15 to-transparent blur-2xl" />

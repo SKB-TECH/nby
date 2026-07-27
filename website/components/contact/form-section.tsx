@@ -231,7 +231,7 @@ export async function ContactFormSection() {
               {contactCardConfig.map(({ key, icon: Icon, lines }) => (
                 <article
                   key={key}
-                  className="flex min-h-[220px] flex-col items-center justify-center rounded-2xl bg-slate-50 px-5 py-8 text-center"
+                  className="flex min-h-[220px] flex-col items-center justify-center rounded bg-slate-50 px-5 py-8 text-center"
                 >
                   <Icon className="h-10 w-10 text-blue-600" strokeWidth={1.5} aria-hidden />
                   <h3 className="mt-5 text-lg font-bold text-slate-950">
