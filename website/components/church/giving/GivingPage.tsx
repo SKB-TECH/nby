@@ -6,7 +6,7 @@ import GivingForm from "./GivingForm";
 import GivingImpact from "./GivingImpact";
 import { givingCopy } from "./giving-copy";
 import GivingCampaigns from "./GivingCampaigns";
-import { usePublicSiteData } from "@/lib/church-api";
+import { usePublicSiteData } from "../../../lib/church-api";
 
 export default function GivingPage() {
     const locale = useLocale() === "en" ? "en" : "fr";

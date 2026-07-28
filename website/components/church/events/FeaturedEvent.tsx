@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { CalendarDays, MapPin } from "lucide-react";
 import ThreeBackground from "@/components/new/ThreeBackground";
 import type { EventsCopy } from "./events-copy";
-import type { PublicActivity } from "@/lib/church-api";
+import type { PublicActivity } from "../../../lib/church-api";
 
 const colors: [string, string, string] = ["#ffffff", "#f0a40b", "#fff0cf"];
 

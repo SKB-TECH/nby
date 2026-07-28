@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import type { PublicPraiseVideo } from "@/lib/church-api";
-import { plainText } from "@/lib/church-api";
+import type { PublicPraiseVideo } from "../../../lib/church-api";
+import { plainText } from "../../../lib/church-api";
 import type { HomeCopy } from "./HomePage";
 
 const localVideo: PublicPraiseVideo = {

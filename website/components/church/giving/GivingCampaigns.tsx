@@ -3,7 +3,7 @@
 import { FormEvent, useRef, useState } from "react";
 import { Check, ChevronLeft, ChevronRight, X } from "lucide-react";
 import { motion } from "framer-motion";
-import { plainText, publicApi, type PublicCampaign } from "@/lib/church-api";
+import { plainText, publicApi, type PublicCampaign } from "../../../lib/church-api";
 
 export default function GivingCampaigns({ campaigns, locale }: { campaigns: PublicCampaign[]; locale: "fr" | "en" }) {
     const [selected, setSelected] = useState<PublicCampaign | null>(null);

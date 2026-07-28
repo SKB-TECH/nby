@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { CalendarDays, Check, Clock3, LockKeyhole, UserRound } from "lucide-react";
 import { type ContactCopy } from "./contact-copy";
 import AppointmentCalendar from "./AppointmentCalendar";
-import { publicApi, type PublicAppointmentSlot } from "@/lib/church-api";
+import { publicApi, type PublicAppointmentSlot } from "../../../lib/church-api";
 
 export default function AppointmentBooking({ copy }: { copy: ContactCopy }) {
     const [type, setType] = useState("");

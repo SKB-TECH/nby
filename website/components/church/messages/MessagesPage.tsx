@@ -6,7 +6,7 @@ import MessagesHero from "./MessagesHero";
 import LiveSection from "./LiveSection";
 import SermonsGrid from "./SermonsGrid";
 import SubscribeSection from "./SubscribeSection";
-import { contentText, usePublicSiteData } from "@/lib/church-api";
+import { contentText, usePublicSiteData } from "../../../lib/church-api";
 
 export default function MessagesPage() {
     const locale = useLocale() === "en" ? "en" : "fr";

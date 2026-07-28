@@ -4,7 +4,7 @@ import { FormEvent, useState } from "react";
 import { ArrowRight, CalendarDays, Check, Clock3, MapPin, X } from "lucide-react";
 import { Link } from "@/i18n/routing";
 import type { HomeCopy } from "./HomePage";
-import { publicApi } from "@/lib/church-api";
+import { publicApi } from "../../../lib/church-api";
 
 export default function VisitSection({ copy: c }: { copy: HomeCopy }) {
     const [open, setOpen] = useState(false);

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import type { GivingCopy } from "./giving-copy";
-import { publicApi } from "@/lib/church-api";
+import { publicApi } from "../../../lib/church-api";
 
 export default function GivingForm({ copy }: { copy: GivingCopy }) {
     const [designation, setDesignation] = useState<string>(copy.designations[1]);

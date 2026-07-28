@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Check, HandHeart, LockKeyhole, Send } from "lucide-react";
 import type { HomeCopy } from "./HomePage";
-import { publicApi } from "@/lib/church-api";
+import { publicApi } from "../../../lib/church-api";
 
 export default function PrayerSection({ copy: c }: { copy: HomeCopy }) {
     const [sent, setSent] = useState(false);

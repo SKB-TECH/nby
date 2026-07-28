@@ -10,7 +10,7 @@ import SermonSection from "./SermonSection";
 import VisitSection from "./VisitSection";
 import PrayerProphecySection from "./PrayerProphecySection";
 import PraiseVideoSection from "./PraiseVideoSection";
-import { contentText, usePublicSiteData } from "@/lib/church-api";
+import { contentText, usePublicSiteData } from "../../../lib/church-api";
 
 const copy = {
     fr: {

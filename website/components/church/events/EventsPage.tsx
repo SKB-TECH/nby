@@ -7,7 +7,7 @@ import FeaturedEvent from "./FeaturedEvent";
 import EventsList from "./EventsList";
 import WeeklyRhythm from "./WeeklyRhythm";
 import HostEvent from "./HostEvent";
-import { contentText, plainText, usePublicSiteData } from "@/lib/church-api";
+import { contentText, plainText, usePublicSiteData } from "../../../lib/church-api";
 
 export default function EventsPage() {
     const locale = useLocale() === "en" ? "en" : "fr";
