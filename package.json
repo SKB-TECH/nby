@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "pnpm --dir website run build",
+    "build": "next build website",
     "start": "next start",
     "lint": "eslint"
   },
