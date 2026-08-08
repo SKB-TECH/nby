@@ -23,6 +23,14 @@
   },
   "dynamicRoutes": [
     {
+      "page": "/api/nby/[...path]",
+      "regex": "^/api/nby/(.+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPpath": "nxtPpath"
+      },
+      "namedRegex": "^/api/nby/(?<nxtPpath>.+?)(?:/)?$"
+    },
+    {
       "page": "/[locale]",
       "regex": "^/([^/]+?)(?:/)?$",
       "routeKeys": {
@@ -45,6 +53,15 @@
         "nxtPlocale": "nxtPlocale"
       },
       "namedRegex": "^/(?<nxtPlocale>[^/]+?)/events(?:/)?$"
+    },
+    {
+      "page": "/[locale]/events/[id]",
+      "regex": "^/([^/]+?)/events/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale",
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/events/(?<nxtPid>[^/]+?)(?:/)?$"
     },
     {
       "page": "/[locale]/give",

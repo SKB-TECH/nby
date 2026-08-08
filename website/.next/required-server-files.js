@@ -110,7 +110,7 @@ self.__SERVER_FILES_MANIFEST={
         "transform": "lodash/{{member}}"
       }
     },
-    "outputFileTracingRoot": "/Users/macbookair/work/iKwook ca",
+    "outputFileTracingRoot": "/Users/user/work/nby",
     "cacheComponents": false,
     "cacheLife": {
       "default": {
@@ -310,14 +310,14 @@ self.__SERVER_FILES_MANIFEST={
     "bundlePagesRouterDependencies": false,
     "configFileName": "next.config.ts",
     "turbopack": {
-      "root": "/Users/macbookair/work/iKwook ca",
+      "root": "/Users/user/work/nby",
       "resolveAlias": {
         "next-intl/config": "./i18n/request.ts"
       }
     },
     "distDirRoot": ".next"
   },
-  "appDir": "/Users/macbookair/work/iKwook ca/website",
+  "appDir": "/Users/user/work/nby/website",
   "relativeAppDir": "website",
   "files": [
     ".next/routes-manifest.json",

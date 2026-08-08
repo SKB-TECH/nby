@@ -3,11 +3,14 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, Clock3 } from "lucide-react";
+import Link from "next/link";
+import { useLocale } from "next-intl";
 import type { EventsCopy } from "./events-copy";
 
 type EventItem = readonly [string, string, string, string, string, string, (string | undefined)?, (string | undefined)?];
 
 export default function EventsList({ copy, events }: { copy: EventsCopy; events?: readonly EventItem[] }) {
+    const locale = useLocale();
     const [activeFilter, setActiveFilter] = useState(copy.filters[0]);
     const eventItems = (events ?? []) as readonly EventItem[];
     const normalize = (value: string) =>
@@ -85,9 +88,9 @@ export default function EventsList({ copy, events }: { copy: EventsCopy; events?
                                     <h3 className="mt-2 font-serif text-2xl">{event[3]}</h3>
                                     <p className="mt-2 text-sm text-slate-500">{event[5]}</p>
                                 </div>
-                                <button aria-label={event[3]} className="flex items-center gap-2 text-xs font-bold text-[#9d6200]">
-                                    Détails <ArrowRight className="h-4 w-4" />
-                                </button>
+                                {event[7] && <Link href={`/${locale}/events/${event[7]}`} aria-label={`${locale === "en" ? "View details for" : "Voir les détails de"} ${event[3]}`} className="flex items-center gap-2 text-xs font-bold text-[#9d6200] transition hover:text-[#071117]">
+                                    {locale === "en" ? "Details" : "Détails"} <ArrowRight className="h-4 w-4" />
+                                </Link>}
                             </motion.article>
                         ))}
                     </AnimatePresence>
