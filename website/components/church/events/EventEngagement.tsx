@@ -1,7 +1,7 @@
 "use client";
 
 import { FormEvent, useEffect, useRef, useState } from "react";
-import { Check, Heart, MessageCircle, Send, Share2, SmilePlus } from "lucide-react";
+import { Check, Heart, MessageCircle, Send, Share2, SmilePlus, Sparkles, UserRound } from "lucide-react";
 import { ActivityEngagement, publicApi } from "../../../lib/church-api";
 
 const COMMENT_EMOJIS = ["🙏", "🙌", "❤️", "🔥", "✨", "😊", "👏", "🕊️", "🎉", "💪", "💯", "😍", "🥰", "😇", "🤲", "📖", "⛪", "🌟"];
@@ -51,10 +51,15 @@ export default function EventEngagement({ eventId, title, locale }: { eventId: s
     }
 
     async function share() {
-        const shareData = { title, text: fr ? `Découvrez cet événement de NBY : ${title}` : `Discover this NBY event: ${title}`, url: window.location.href };
+        const url = new URL(window.location.href);
+        url.search = "";
+        url.hash = "";
+        const shareMessage = fr
+            ? `✨ ${title}\n\nDécouvrez cet événement de NBY · Cité du Surnaturel.\n\n🔗 ${url.toString()}`
+            : `✨ ${title}\n\nDiscover this event from NBY · City of the Supernatural.\n\n🔗 ${url.toString()}`;
         try {
-            if (navigator.share) await navigator.share(shareData);
-            else { await navigator.clipboard.writeText(window.location.href); setShared(true); window.setTimeout(() => setShared(false), 2500); }
+            if (navigator.share) await navigator.share({ title, text: shareMessage });
+            else { await navigator.clipboard.writeText(shareMessage); setShared(true); window.setTimeout(() => setShared(false), 2500); }
         } catch {}
     }
 
@@ -75,18 +80,16 @@ export default function EventEngagement({ eventId, title, locale }: { eventId: s
             <a href="#event-comments" className="event-social-button"><MessageCircle className="h-5 w-5" />{data.comments.length} {fr ? "Commentaire(s)" : "Comment(s)"}</a>
             <button type="button" onClick={() => void share()} className="event-social-button">{shared ? <Check className="h-5 w-5" /> : <Share2 className="h-5 w-5" />}{shared ? (fr ? "Lien copié" : "Link copied") : (fr ? "Partager" : "Share")}</button>
         </div>
-        <div id="event-comments" className="mt-10"><h2 className="font-serif text-3xl">{fr ? "Commentaires" : "Comments"}</h2>
-            <form onSubmit={comment} className="event-comment-form mt-6 rounded bg-white p-5 shadow-sm sm:p-7">
-                <label className="block max-w-md text-xs font-bold text-slate-600">{fr ? "Votre nom" : "Your name"}<input value={name} onChange={event => setName(event.target.value)} maxLength={80} required className="event-comment-input" /></label>
-                <label className="mt-5 block text-xs font-bold text-slate-600">{fr ? "Votre commentaire" : "Your comment"}<textarea ref={messageRef} value={message} onChange={event => setMessage(event.target.value)} maxLength={1000} required rows={4} placeholder={fr ? "Écrivez votre message… 🙏" : "Write your message… 🙏"} className="event-comment-input resize-y" /></label>
-                {showEmojis && <div className="event-emoji-picker" role="group" aria-label={fr ? "Choisir un emoji" : "Choose an emoji"}>{COMMENT_EMOJIS.map(emoji => <button key={emoji} type="button" onClick={() => addEmoji(emoji)} aria-label={emoji}>{emoji}</button>)}</div>}
-                <div className="event-comment-actions">
-                    <button type="button" onClick={() => setShowEmojis(current => !current)} aria-expanded={showEmojis} className={`event-emoji-trigger ${showEmojis ? "active" : ""}`}><SmilePlus className="h-5 w-5" />{fr ? "Ajouter un emoji" : "Add an emoji"}</button>
-                    <span>{message.length}/1000</span>
-                    <button disabled={busy || !name.trim() || !message.trim()} className="event-publish-button"><Send className="h-4 w-4" />{busy ? (fr ? "Publication…" : "Posting…") : (fr ? "Publier" : "Post")}</button>
+        <div id="event-comments" className="event-comments mt-10"><div className="event-comments-heading"><span><MessageCircle /></span><div><p>{fr ? "La communauté réagit" : "Community reactions"}</p><h2>{fr ? "Commentaires" : "Comments"}</h2></div></div>
+            <form onSubmit={comment} className="event-comment-form">
+                <div className="event-composer-title"><span><Sparkles /></span><div><strong>{fr ? "Partagez ce que Dieu a mis dans votre cœur" : "Share what God has placed on your heart"}</strong><small>{fr ? "Votre message sera visible par toute la communauté." : "Your message will be visible to the whole community."}</small></div></div>
+                <label className="event-name-field"><UserRound /><span><small>{fr ? "Votre nom" : "Your name"}</small><input value={name} onChange={event => setName(event.target.value)} maxLength={80} required placeholder={fr ? "Comment devons-nous vous appeler ?" : "What should we call you?"} /></span></label>
+                <div className="event-message-field"><textarea ref={messageRef} value={message} onChange={event => setMessage(event.target.value)} maxLength={1000} required rows={4} placeholder={fr ? "Écrivez votre témoignage, encouragement ou réaction…" : "Write your testimony, encouragement or reaction…"} />
+                    {showEmojis && <div className="event-emoji-picker" role="group" aria-label={fr ? "Choisir un emoji" : "Choose an emoji"}>{COMMENT_EMOJIS.map(emoji => <button key={emoji} type="button" onClick={() => addEmoji(emoji)} aria-label={emoji}>{emoji}</button>)}</div>}
+                    <div className="event-comment-actions"><button type="button" onClick={() => setShowEmojis(current => !current)} aria-expanded={showEmojis} className={`event-emoji-trigger ${showEmojis ? "active" : ""}`}><SmilePlus /> <span>{fr ? "Emoji" : "Emoji"}</span></button><small>{message.length}/1000</small><button disabled={busy || !name.trim() || !message.trim()} className="event-publish-button"><span>{busy ? (fr ? "Publication…" : "Posting…") : (fr ? "Publier" : "Post")}</span><Send /></button></div>
                 </div>
             </form>
-            <div className="mt-6 space-y-3">{data.comments.map(item => <article key={item.id} className="rounded bg-white p-5 shadow-sm"><div className="flex flex-wrap items-baseline justify-between gap-2"><strong className="text-sm">{item.authorName}</strong><time className="text-xs text-slate-400">{new Intl.DateTimeFormat(locale, { dateStyle: "medium", timeStyle: "short", timeZone: "Africa/Kinshasa" }).format(new Date(item.createdAt))}</time></div><p className="mt-3 whitespace-pre-wrap text-sm leading-6 text-slate-600">{item.message}</p></article>)}{!data.comments.length && <p className="rounded border border-dashed border-slate-300 p-6 text-center text-sm text-slate-400">{fr ? "Soyez le premier à commenter cet événement." : "Be the first to comment on this event."}</p>}</div>
+            <div className="event-comment-feed">{data.comments.map(item => <article key={item.id} className="event-comment-card"><span className="event-comment-avatar">{item.authorName.trim().charAt(0).toUpperCase()}</span><div><header><strong>{item.authorName}</strong><time>{new Intl.DateTimeFormat(locale, { dateStyle: "medium", timeStyle: "short", timeZone: "Africa/Kinshasa" }).format(new Date(item.createdAt))}</time></header><p>{item.message}</p></div></article>)}{!data.comments.length && <div className="event-comments-empty"><MessageCircle /><strong>{fr ? "La conversation commence ici" : "The conversation starts here"}</strong><p>{fr ? "Soyez le premier à partager un mot d’encouragement." : "Be the first to share a word of encouragement."}</p></div>}</div>
         </div>
     </section>;
 }
