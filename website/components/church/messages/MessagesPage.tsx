@@ -21,7 +21,7 @@ export default function MessagesPage() {
         id: item.youtubeVideoId!,
         title: item.title,
         category: item.category ?? (locale === "fr" ? "Prédication" : "Sermon"),
-        date: item.preachedAt ? new Intl.DateTimeFormat(locale, { dateStyle: "long" }).format(new Date(item.preachedAt)) : "",
+        date: item.preachedAt ? new Intl.DateTimeFormat(locale, { dateStyle: "long", timeZone: "Africa/Kinshasa" }).format(new Date(item.preachedAt)) : "",
         thumbnailUrl: item.thumbnailUrl,
     }));
     const liveVideoId = data?.sermons.find(item => item.live && item.youtubeVideoId)?.youtubeVideoId;
