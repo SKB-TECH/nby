@@ -115,7 +115,7 @@
   },
   {
     "route": "/[locale]/events/[id]",
-    "firstLoadUncompressedJsBytes": 852358,
+    "firstLoadUncompressedJsBytes": 853570,
     "firstLoadChunkPaths": [
       ".next/static/chunks/01xlw8hd842-c.js",
       ".next/static/chunks/0d3shmwh5_nmn.js",
@@ -123,7 +123,7 @@
       ".next/static/chunks/16.a7kj-m5zj6.js",
       ".next/static/chunks/0gss_081ddhns.js",
       ".next/static/chunks/15f~bf80acesy.js",
-      ".next/static/chunks/0f88q_v50m~sj.js",
+      ".next/static/chunks/0bumc8~dso9e6.js",
       ".next/static/chunks/061_etj.xprwg.js",
       ".next/static/chunks/0pqt~8bl3ukh4.js",
       ".next/static/chunks/10u3y4bw1ayzs.js",

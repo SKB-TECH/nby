@@ -1,8 +1,10 @@
 "use client";
 
-import { FormEvent, useEffect, useState } from "react";
-import { Check, Heart, MessageCircle, Send, Share2 } from "lucide-react";
+import { FormEvent, useEffect, useRef, useState } from "react";
+import { Check, Heart, MessageCircle, Send, Share2, SmilePlus } from "lucide-react";
 import { ActivityEngagement, publicApi } from "../../../lib/church-api";
+
+const COMMENT_EMOJIS = ["🙏", "🙌", "❤️", "🔥", "✨", "😊", "👏", "🕊️", "🎉", "💪", "💯", "😍", "🥰", "😇", "🤲", "📖", "⛪", "🌟"];
 
 function visitorId() {
     const key = "nby-event-visitor";
@@ -20,6 +22,8 @@ export default function EventEngagement({ eventId, title, locale }: { eventId: s
     const [message, setMessage] = useState("");
     const [busy, setBusy] = useState(false);
     const [shared, setShared] = useState(false);
+    const [showEmojis, setShowEmojis] = useState(false);
+    const messageRef = useRef<HTMLTextAreaElement>(null);
     const fr = locale === "fr";
 
     useEffect(() => {
@@ -54,6 +58,17 @@ export default function EventEngagement({ eventId, title, locale }: { eventId: s
         } catch {}
     }
 
+    function addEmoji(emoji: string) {
+        const input = messageRef.current;
+        const start = input?.selectionStart ?? message.length;
+        const end = input?.selectionEnd ?? message.length;
+        setMessage(`${message.slice(0, start)}${emoji}${message.slice(end)}`);
+        requestAnimationFrame(() => {
+            input?.focus();
+            input?.setSelectionRange(start + emoji.length, start + emoji.length);
+        });
+    }
+
     return <section className="mt-14 border-t border-slate-200 pt-10">
         <div className="flex flex-wrap gap-3">
             <button type="button" onClick={() => void toggleLike()} disabled={busy} className={`event-social-button ${data.liked ? "active" : ""}`}><Heart className="h-5 w-5" fill={data.liked ? "currentColor" : "none"} />{data.likes} {fr ? "J’aime" : "Like"}</button>
@@ -61,7 +76,16 @@ export default function EventEngagement({ eventId, title, locale }: { eventId: s
             <button type="button" onClick={() => void share()} className="event-social-button">{shared ? <Check className="h-5 w-5" /> : <Share2 className="h-5 w-5" />}{shared ? (fr ? "Lien copié" : "Link copied") : (fr ? "Partager" : "Share")}</button>
         </div>
         <div id="event-comments" className="mt-10"><h2 className="font-serif text-3xl">{fr ? "Commentaires" : "Comments"}</h2>
-            <form onSubmit={comment} className="mt-6 rounded bg-white p-5 shadow-sm"><div className="grid gap-4 sm:grid-cols-[220px_1fr]"><label className="text-xs font-bold text-slate-600">{fr ? "Votre nom" : "Your name"}<input value={name} onChange={event => setName(event.target.value)} maxLength={80} required className="event-comment-input" /></label><label className="text-xs font-bold text-slate-600">{fr ? "Votre commentaire" : "Your comment"}<textarea value={message} onChange={event => setMessage(event.target.value)} maxLength={1000} required rows={3} className="event-comment-input resize-y" /></label></div><button disabled={busy || !name.trim() || !message.trim()} className="mt-4 inline-flex items-center gap-2 rounded bg-[#df9200] px-5 py-3 text-xs font-bold text-white disabled:opacity-50"><Send className="h-4 w-4" />{busy ? (fr ? "Publication…" : "Posting…") : (fr ? "Publier" : "Post")}</button></form>
+            <form onSubmit={comment} className="event-comment-form mt-6 rounded bg-white p-5 shadow-sm sm:p-7">
+                <label className="block max-w-md text-xs font-bold text-slate-600">{fr ? "Votre nom" : "Your name"}<input value={name} onChange={event => setName(event.target.value)} maxLength={80} required className="event-comment-input" /></label>
+                <label className="mt-5 block text-xs font-bold text-slate-600">{fr ? "Votre commentaire" : "Your comment"}<textarea ref={messageRef} value={message} onChange={event => setMessage(event.target.value)} maxLength={1000} required rows={4} placeholder={fr ? "Écrivez votre message… 🙏" : "Write your message… 🙏"} className="event-comment-input resize-y" /></label>
+                {showEmojis && <div className="event-emoji-picker" role="group" aria-label={fr ? "Choisir un emoji" : "Choose an emoji"}>{COMMENT_EMOJIS.map(emoji => <button key={emoji} type="button" onClick={() => addEmoji(emoji)} aria-label={emoji}>{emoji}</button>)}</div>}
+                <div className="event-comment-actions">
+                    <button type="button" onClick={() => setShowEmojis(current => !current)} aria-expanded={showEmojis} className={`event-emoji-trigger ${showEmojis ? "active" : ""}`}><SmilePlus className="h-5 w-5" />{fr ? "Ajouter un emoji" : "Add an emoji"}</button>
+                    <span>{message.length}/1000</span>
+                    <button disabled={busy || !name.trim() || !message.trim()} className="event-publish-button"><Send className="h-4 w-4" />{busy ? (fr ? "Publication…" : "Posting…") : (fr ? "Publier" : "Post")}</button>
+                </div>
+            </form>
             <div className="mt-6 space-y-3">{data.comments.map(item => <article key={item.id} className="rounded bg-white p-5 shadow-sm"><div className="flex flex-wrap items-baseline justify-between gap-2"><strong className="text-sm">{item.authorName}</strong><time className="text-xs text-slate-400">{new Intl.DateTimeFormat(locale, { dateStyle: "medium", timeStyle: "short", timeZone: "Africa/Kinshasa" }).format(new Date(item.createdAt))}</time></div><p className="mt-3 whitespace-pre-wrap text-sm leading-6 text-slate-600">{item.message}</p></article>)}{!data.comments.length && <p className="rounded border border-dashed border-slate-300 p-6 text-center text-sm text-slate-400">{fr ? "Soyez le premier à commenter cet événement." : "Be the first to comment on this event."}</p>}</div>
         </div>
     </section>;
