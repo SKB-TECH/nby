@@ -4,7 +4,22 @@ import Image from "next/image";
 import Link from "next/link";
 import { useLocale } from "next-intl";
 import { ArrowLeft, CalendarDays, Clock3, MapPin } from "lucide-react";
-import { plainText, usePublicSiteData } from "../../../lib/church-api";
+import { usePublicSiteData } from "../../../lib/church-api";
+
+function sanitizeEditorHtml(value: string) {
+    return value
+        .replace(/<(script|style|iframe|object|embed|form|input)[^>]*>[\s\S]*?<\/\1\s*>/gi, "")
+        .replace(/<(script|style|iframe|object|embed|form|input)[^>]*\/?\s*>/gi, "")
+        .replace(/\s+on\w+\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]+)/gi, "")
+        .replace(/\s+(href|src)\s*=\s*(["'])\s*javascript:[\s\S]*?\2/gi, "");
+}
+
+function EventDescription({ value, fallback }: { value?: string; fallback: string }) {
+    if (!value?.trim()) return <p className="event-description">{fallback}</p>;
+    const containsEditorMarkup = /<(?:p|br|h[1-6]|ul|ol|li|blockquote|strong|em|a)\b/i.test(value);
+    if (containsEditorMarkup) return <div className="event-description" dangerouslySetInnerHTML={{ __html: sanitizeEditorHtml(value) }} />;
+    return <p className="event-description whitespace-pre-wrap">{value}</p>;
+}
 
 export default function EventDetailPage({ eventId }: { eventId: string }) {
     const locale = useLocale() === "en" ? "en" : "fr";
@@ -28,7 +43,7 @@ export default function EventDetailPage({ eventId }: { eventId: string }) {
             </div>
         </header>
         <div className="mx-auto grid max-w-[1180px] gap-12 px-5 pt-14 sm:px-8 lg:grid-cols-[1fr_340px]">
-            <section><p className="text-[10px] font-bold uppercase tracking-[.28em] text-[#df9200]">{locale === "en" ? "About this event" : "À propos de cet événement"}</p><p className="mt-5 whitespace-pre-line text-base leading-8 text-slate-600">{plainText(event.description) || (locale === "en" ? "More information will be available soon." : "Plus d’informations seront bientôt disponibles.")}</p></section>
+            <section><p className="text-[10px] font-bold uppercase tracking-[.28em] text-[#df9200]">{locale === "en" ? "About this event" : "À propos de cet événement"}</p><EventDescription value={event.description} fallback={locale === "en" ? "More information will be available soon." : "Plus d’informations seront bientôt disponibles."} /></section>
             <aside className="h-fit rounded bg-white p-7 shadow-lg"><h2 className="font-serif text-2xl">{locale === "en" ? "Practical information" : "Informations pratiques"}</h2><div className="mt-6 space-y-5 text-sm text-slate-600"><p className="flex gap-3"><CalendarDays className="h-5 w-5 shrink-0 text-[#df9200]" /><span>{formatDate(event.startsAt)}</span></p><p className="flex gap-3"><Clock3 className="h-5 w-5 shrink-0 text-[#df9200]" /><span>{formatTime(event.startsAt)}{event.endsAt ? ` — ${formatTime(event.endsAt)}` : ""}</span></p>{event.location && <p className="flex gap-3"><MapPin className="h-5 w-5 shrink-0 text-[#df9200]" /><span>{event.location}</span></p>}</div><Link href={`/${locale}/contact`} className="mt-8 block rounded bg-[#df9200] px-6 py-4 text-center text-xs font-bold uppercase tracking-wider text-white transition hover:bg-[#071117]">{locale === "en" ? "Contact us" : "Nous contacter"}</Link></aside>
         </div>
     </article>;
