@@ -1,17 +1,19 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowRight, Clock3 } from "lucide-react";
+import { ArrowRight, Clock3, Heart, MessageCircle } from "lucide-react";
 import Link from "next/link";
 import { useLocale } from "next-intl";
 import type { EventsCopy } from "./events-copy";
+import { ActivityEngagementSummary, publicApi } from "../../../lib/church-api";
 
 type EventItem = readonly [string, string, string, string, string, string, (string | undefined)?, (string | undefined)?];
 
 export default function EventsList({ copy, events }: { copy: EventsCopy; events?: readonly EventItem[] }) {
     const locale = useLocale();
     const [activeFilter, setActiveFilter] = useState(copy.filters[0]);
+    const [engagement, setEngagement] = useState<Record<string, ActivityEngagementSummary>>({});
     const eventItems = (events ?? []) as readonly EventItem[];
     const normalize = (value: string) =>
         value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toUpperCase();
@@ -19,6 +21,12 @@ export default function EventsList({ copy, events }: { copy: EventsCopy; events?
         activeFilter === copy.filters[0]
             ? eventItems
             : eventItems.filter((event) => normalize(event[2]) === normalize(activeFilter));
+
+    useEffect(() => {
+        publicApi<ActivityEngagementSummary[]>("/public/activities/engagement-summary")
+            .then(items => setEngagement(Object.fromEntries(items.map(item => [item.activityId, item]))))
+            .catch(() => setEngagement({}));
+    }, []);
 
     return (
         <section className="px-5 py-20 sm:px-8">
@@ -87,6 +95,7 @@ export default function EventsList({ copy, events }: { copy: EventsCopy; events?
                                     </p>
                                     <h3 className="mt-2 font-serif text-2xl">{event[3]}</h3>
                                     <p className="mt-2 text-sm text-slate-500">{event[5]}</p>
+                                    {event[7] && <p className="event-card-engagement"><span><Heart />{engagement[event[7]]?.likes ?? 0} J’aime</span><span><MessageCircle />{engagement[event[7]]?.comments ?? 0} commentaire{(engagement[event[7]]?.comments ?? 0) > 1 ? "s" : ""}</span></p>}
                                 </div>
                                 {event[7] && <Link href={`/${locale}/events/${event[7]}`} aria-label={`${locale === "en" ? "View details for" : "Voir les détails de"} ${event[3]}`} className="flex items-center gap-2 text-xs font-bold text-[#9d6200] transition hover:text-[#071117]">
                                     {locale === "en" ? "Details" : "Détails"} <ArrowRight className="h-4 w-4" />

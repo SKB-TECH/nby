@@ -17,6 +17,7 @@ export type PublicActivity = {
 
 export type ActivityComment = { id: string; parentId?: string; authorName: string; message: string; createdAt: string; owned: boolean; likes: number; liked: boolean };
 export type ActivityEngagement = { likes: number; liked: boolean; comments: ActivityComment[] };
+export type ActivityEngagementSummary = { activityId: string; likes: number; comments: number };
 
 export type PublicSermon = {
   id: string;
