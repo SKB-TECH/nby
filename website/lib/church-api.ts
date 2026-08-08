@@ -15,7 +15,7 @@ export type PublicActivity = {
   posterUrl?: string;
 };
 
-export type ActivityComment = { id: string; authorName: string; message: string; createdAt: string; owned: boolean };
+export type ActivityComment = { id: string; parentId?: string; authorName: string; message: string; createdAt: string; owned: boolean; likes: number; liked: boolean };
 export type ActivityEngagement = { likes: number; liked: boolean; comments: ActivityComment[] };
 
 export type PublicSermon = {
