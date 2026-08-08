@@ -1,7 +1,7 @@
 "use client";
 
 import { FormEvent, useEffect, useRef, useState } from "react";
-import { Check, Heart, MessageCircle, Pencil, Send, Share2, SmilePlus, Sparkles, Trash2, UserRound, X } from "lucide-react";
+import { Check, Heart, MessageCircle, Pencil, Send, Share2, SmilePlus, Trash2, X } from "lucide-react";
 import { ActivityEngagement, publicApi } from "../../../lib/church-api";
 
 const COMMENT_EMOJIS = ["🙏", "🙌", "❤️", "🔥", "✨", "😊", "👏", "🕊️", "🎉", "💪", "💯", "😍", "🥰", "😇", "🤲", "📖", "⛪", "🌟"];
@@ -123,12 +123,16 @@ export default function EventEngagement({ eventId, title, locale }: { eventId: s
             <button type="button" onClick={() => void share()} className="event-social-button">{shared ? <Check className="h-5 w-5" /> : <Share2 className="h-5 w-5" />}{shared ? (fr ? "Lien copié" : "Link copied") : (fr ? "Partager" : "Share")}</button>
         </div>
         <div id="event-comments" className="event-comments mt-10"><div className="event-comments-heading"><span><MessageCircle /></span><div><p>{fr ? "La communauté réagit" : "Community reactions"}</p><h2>{fr ? "Commentaires" : "Comments"}</h2></div></div>
-            <form onSubmit={comment} className="event-comment-form">
-                <div className="event-composer-title"><span><Sparkles /></span><div><strong>{fr ? "Partagez ce que Dieu a mis dans votre cœur" : "Share what God has placed on your heart"}</strong><small>{fr ? "Votre message sera visible par toute la communauté." : "Your message will be visible to the whole community."}</small></div></div>
-                <label className="event-name-field"><UserRound /><span><small>{fr ? "Votre nom" : "Your name"}</small><input value={name} onChange={event => setName(event.target.value)} maxLength={80} required placeholder={fr ? "Comment devons-nous vous appeler ?" : "What should we call you?"} /></span></label>
-                <div className="event-message-field"><textarea ref={messageRef} value={message} onChange={event => setMessage(event.target.value)} maxLength={1000} required rows={4} placeholder={fr ? "Écrivez votre témoignage, encouragement ou réaction…" : "Write your testimony, encouragement or reaction…"} />
+            <form onSubmit={comment} className="event-comment-form social-composer">
+                <div className="social-composer-row">
+                    <span className="social-composer-avatar">{name.trim() ? name.trim().charAt(0).toUpperCase() : "N"}</span>
+                    <div className="social-composer-content">
+                        <label className="social-name-field"><span>{fr ? "Commenter en tant que" : "Comment as"}</span><input value={name} onChange={event => setName(event.target.value)} maxLength={80} required placeholder={fr ? "Votre nom" : "Your name"} /></label>
+                        <div className="event-message-field social-message-field"><textarea ref={messageRef} value={message} onChange={event => setMessage(event.target.value)} maxLength={1000} required rows={2} placeholder={fr ? "Écrire un commentaire…" : "Write a comment…"} />
                     {showEmojis && <div className="event-emoji-picker" role="group" aria-label={fr ? "Choisir un emoji" : "Choose an emoji"}>{COMMENT_EMOJIS.map(emoji => <button key={emoji} type="button" onClick={() => addEmoji(emoji)} aria-label={emoji}>{emoji}</button>)}</div>}
-                    <div className="event-comment-actions"><button type="button" onClick={() => setShowEmojis(current => !current)} aria-expanded={showEmojis} className={`event-emoji-trigger ${showEmojis ? "active" : ""}`}><SmilePlus /> <span>{fr ? "Emoji" : "Emoji"}</span></button><small>{message.length}/1000</small><button disabled={busy || !name.trim() || !message.trim()} className="event-publish-button"><span>{busy ? (fr ? "Publication…" : "Posting…") : (fr ? "Publier" : "Post")}</span><Send /></button></div>
+                            <div className="event-comment-actions"><button type="button" onClick={() => setShowEmojis(current => !current)} aria-expanded={showEmojis} aria-label={fr ? "Ajouter un emoji" : "Add an emoji"} className={`event-emoji-trigger ${showEmojis ? "active" : ""}`}><SmilePlus /></button><small>{message.length ? `${message.length}/1000` : (fr ? "Soyez respectueux et bienveillant" : "Be respectful and kind")}</small><button disabled={busy || !name.trim() || !message.trim()} className="event-publish-button"><span>{busy ? "…" : (fr ? "Publier" : "Post")}</span><Send /></button></div>
+                        </div>
+                    </div>
                 </div>
             </form>
             <div className="event-comment-feed">{data.comments.filter(item => !item.parentId).map(item => <div key={item.id} className="event-comment-thread">{renderComment(item)}{data.comments.filter(reply => reply.parentId === item.id).reverse().map(reply => renderComment(reply, true))}</div>)}{!data.comments.length && <div className="event-comments-empty"><MessageCircle /><strong>{fr ? "La conversation commence ici" : "The conversation starts here"}</strong><p>{fr ? "Soyez le premier à partager un mot d’encouragement." : "Be the first to share a word of encouragement."}</p></div>}</div>
