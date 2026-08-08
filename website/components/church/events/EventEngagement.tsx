@@ -65,7 +65,7 @@ export default function EventEngagement({ eventId, title, locale }: { eventId: s
             : `✨ ${title}\n\nDiscover this event from NBY · City of the Supernatural.\n\n🔗 ${url.toString()}`;
         try {
             if (navigator.share) await navigator.share({ title, text: shareMessage });
-            else { await navigator.clipboard.writeText(shareMessage); setShared(true); window.setTimeout(() => setShared(false), 2500); }
+            else { await navigator.clipboard.writeText(url.toString()); setShared(true); window.setTimeout(() => setShared(false), 2500); }
         } catch {}
     }
 
