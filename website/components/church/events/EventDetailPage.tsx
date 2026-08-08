@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useLocale } from "next-intl";
 import { ArrowLeft, CalendarDays, Clock3, MapPin } from "lucide-react";
 import { usePublicSiteData } from "../../../lib/church-api";
+import EventEngagement from "./EventEngagement";
 
 function sanitizeEditorHtml(value: string) {
     return value
@@ -43,7 +44,7 @@ export default function EventDetailPage({ eventId }: { eventId: string }) {
             </div>
         </header>
         <div className="mx-auto grid max-w-[1180px] gap-12 px-5 pt-14 sm:px-8 lg:grid-cols-[1fr_340px]">
-            <section><p className="text-[10px] font-bold uppercase tracking-[.28em] text-[#df9200]">{locale === "en" ? "About this event" : "À propos de cet événement"}</p><EventDescription value={event.description} fallback={locale === "en" ? "More information will be available soon." : "Plus d’informations seront bientôt disponibles."} /></section>
+            <section><p className="text-[10px] font-bold uppercase tracking-[.28em] text-[#df9200]">{locale === "en" ? "About this event" : "À propos de cet événement"}</p><EventDescription value={event.description} fallback={locale === "en" ? "More information will be available soon." : "Plus d’informations seront bientôt disponibles."} /><EventEngagement eventId={event.id} title={event.title} locale={locale} /></section>
             <aside className="h-fit rounded bg-white p-7 shadow-lg"><h2 className="font-serif text-2xl">{locale === "en" ? "Practical information" : "Informations pratiques"}</h2><div className="mt-6 space-y-5 text-sm text-slate-600"><p className="flex gap-3"><CalendarDays className="h-5 w-5 shrink-0 text-[#df9200]" /><span>{formatDate(event.startsAt)}</span></p><p className="flex gap-3"><Clock3 className="h-5 w-5 shrink-0 text-[#df9200]" /><span>{formatTime(event.startsAt)}{event.endsAt ? ` — ${formatTime(event.endsAt)}` : ""}<small className="mt-1 block text-xs text-slate-400">{locale === "en" ? "Kinshasa time" : "Heure de Kinshasa"}</small></span></p>{event.location && <p className="flex gap-3"><MapPin className="h-5 w-5 shrink-0 text-[#df9200]" /><span>{event.location}</span></p>}</div><Link href={`/${locale}/contact`} className="mt-8 block rounded bg-[#df9200] px-6 py-4 text-center text-xs font-bold uppercase tracking-wider text-white transition hover:bg-[#071117]">{locale === "en" ? "Contact us" : "Nous contacter"}</Link></aside>
         </div>
     </article>;
