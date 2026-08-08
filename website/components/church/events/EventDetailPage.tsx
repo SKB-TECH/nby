@@ -15,11 +15,19 @@ function sanitizeEditorHtml(value: string) {
         .replace(/\s+(href|src)\s*=\s*(["'])\s*javascript:[\s\S]*?\2/gi, "");
 }
 
+function enhanceEventText(value: string) {
+    return value.split(/(<[^>]+>)/g).map(part => part.startsWith("<") ? part : part
+        .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+        .replace(/(^|\s)(#[\p{L}\p{N}_]+)/gu, '$1<span class="event-hashtag">$2</span>')).join("");
+}
+
 function EventDescription({ value, fallback }: { value?: string; fallback: string }) {
     if (!value?.trim()) return <p className="event-description">{fallback}</p>;
     const containsEditorMarkup = /<(?:p|br|h[1-6]|ul|ol|li|blockquote|strong|em|a)\b/i.test(value);
-    if (containsEditorMarkup) return <div className="event-description" dangerouslySetInnerHTML={{ __html: sanitizeEditorHtml(value) }} />;
-    return <p className="event-description whitespace-pre-wrap">{value}</p>;
+    const html = containsEditorMarkup
+        ? sanitizeEditorHtml(value)
+        : value.replace(/[&<>"']/g, character => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;" })[character]!).replace(/\r?\n/g, "<br>");
+    return <div className="event-description" dangerouslySetInnerHTML={{ __html: enhanceEventText(html) }} />;
 }
 
 export default function EventDetailPage({ eventId }: { eventId: string }) {

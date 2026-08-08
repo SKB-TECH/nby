@@ -1,7 +1,7 @@
 "use client";
 
 import { FormEvent, useEffect, useRef, useState } from "react";
-import { Check, Heart, MessageCircle, Send, Share2, SmilePlus, Sparkles, UserRound } from "lucide-react";
+import { Check, Heart, MessageCircle, Pencil, Send, Share2, SmilePlus, Sparkles, Trash2, UserRound, X } from "lucide-react";
 import { ActivityEngagement, publicApi } from "../../../lib/church-api";
 
 const COMMENT_EMOJIS = ["🙏", "🙌", "❤️", "🔥", "✨", "😊", "👏", "🕊️", "🎉", "💪", "💯", "😍", "🥰", "😇", "🤲", "📖", "⛪", "🌟"];
@@ -23,6 +23,8 @@ export default function EventEngagement({ eventId, title, locale }: { eventId: s
     const [busy, setBusy] = useState(false);
     const [shared, setShared] = useState(false);
     const [showEmojis, setShowEmojis] = useState(false);
+    const [editingId, setEditingId] = useState<string | null>(null);
+    const [editingMessage, setEditingMessage] = useState("");
     const messageRef = useRef<HTMLTextAreaElement>(null);
     const fr = locale === "fr";
 
@@ -44,7 +46,7 @@ export default function EventEngagement({ eventId, title, locale }: { eventId: s
         if (busy || !name.trim() || !message.trim()) return;
         setBusy(true);
         try {
-            const response = await publicApi<ActivityEngagement>(`/public/activities/${eventId}/comments`, { method: "POST", body: JSON.stringify({ authorName: name, message }) });
+            const response = await publicApi<ActivityEngagement>(`/public/activities/${eventId}/comments`, { method: "POST", body: JSON.stringify({ visitorId: visitorId(), authorName: name, message }) });
             setData(current => ({ ...response, liked: current.liked }));
             setMessage("");
         } finally { setBusy(false); }
@@ -74,6 +76,24 @@ export default function EventEngagement({ eventId, title, locale }: { eventId: s
         });
     }
 
+    async function saveComment(commentId: string) {
+        if (busy || editingMessage.trim().length < 2) return;
+        setBusy(true);
+        try {
+            setData(await publicApi<ActivityEngagement>(`/public/activities/${eventId}/comments/${commentId}`, { method: "PATCH", body: JSON.stringify({ visitorId: visitorId(), message: editingMessage }) }));
+            setEditingId(null);
+            setEditingMessage("");
+        } finally { setBusy(false); }
+    }
+
+    async function removeComment(commentId: string) {
+        if (busy || !window.confirm(fr ? "Supprimer définitivement ce commentaire ?" : "Delete this comment permanently?")) return;
+        setBusy(true);
+        try {
+            setData(await publicApi<ActivityEngagement>(`/public/activities/${eventId}/comments/${commentId}?visitorId=${encodeURIComponent(visitorId())}`, { method: "DELETE" }));
+        } finally { setBusy(false); }
+    }
+
     return <section className="mt-14 border-t border-slate-200 pt-10">
         <div className="flex flex-wrap gap-3">
             <button type="button" onClick={() => void toggleLike()} disabled={busy} className={`event-social-button ${data.liked ? "active" : ""}`}><Heart className="h-5 w-5" fill={data.liked ? "currentColor" : "none"} />{data.likes} {fr ? "J’aime" : "Like"}</button>
@@ -89,7 +109,7 @@ export default function EventEngagement({ eventId, title, locale }: { eventId: s
                     <div className="event-comment-actions"><button type="button" onClick={() => setShowEmojis(current => !current)} aria-expanded={showEmojis} className={`event-emoji-trigger ${showEmojis ? "active" : ""}`}><SmilePlus /> <span>{fr ? "Emoji" : "Emoji"}</span></button><small>{message.length}/1000</small><button disabled={busy || !name.trim() || !message.trim()} className="event-publish-button"><span>{busy ? (fr ? "Publication…" : "Posting…") : (fr ? "Publier" : "Post")}</span><Send /></button></div>
                 </div>
             </form>
-            <div className="event-comment-feed">{data.comments.map(item => <article key={item.id} className="event-comment-card"><span className="event-comment-avatar">{item.authorName.trim().charAt(0).toUpperCase()}</span><div><header><strong>{item.authorName}</strong><time>{new Intl.DateTimeFormat(locale, { dateStyle: "medium", timeStyle: "short", timeZone: "Africa/Kinshasa" }).format(new Date(item.createdAt))}</time></header><p>{item.message}</p></div></article>)}{!data.comments.length && <div className="event-comments-empty"><MessageCircle /><strong>{fr ? "La conversation commence ici" : "The conversation starts here"}</strong><p>{fr ? "Soyez le premier à partager un mot d’encouragement." : "Be the first to share a word of encouragement."}</p></div>}</div>
+            <div className="event-comment-feed">{data.comments.map(item => <article key={item.id} className="event-comment-card"><span className="event-comment-avatar">{item.authorName.trim().charAt(0).toUpperCase()}</span><div><header><span><strong>{item.authorName}</strong>{item.owned && <small>{fr ? "Votre commentaire" : "Your comment"}</small>}</span><time>{new Intl.DateTimeFormat(locale, { dateStyle: "medium", timeStyle: "short", timeZone: "Africa/Kinshasa" }).format(new Date(item.createdAt))}</time></header>{editingId === item.id ? <div className="event-comment-edit"><textarea value={editingMessage} onChange={event => setEditingMessage(event.target.value)} maxLength={1000} autoFocus /><div><button type="button" onClick={() => { setEditingId(null); setEditingMessage(""); }}><X />{fr ? "Annuler" : "Cancel"}</button><button type="button" disabled={busy || editingMessage.trim().length < 2} onClick={() => void saveComment(item.id)}><Check />{fr ? "Enregistrer" : "Save"}</button></div></div> : <><p>{item.message}</p>{item.owned && <footer><button type="button" onClick={() => { setEditingId(item.id); setEditingMessage(item.message); }}><Pencil />{fr ? "Modifier" : "Edit"}</button><button type="button" className="delete" onClick={() => void removeComment(item.id)}><Trash2 />{fr ? "Supprimer" : "Delete"}</button></footer>}</>}</div></article>)}{!data.comments.length && <div className="event-comments-empty"><MessageCircle /><strong>{fr ? "La conversation commence ici" : "The conversation starts here"}</strong><p>{fr ? "Soyez le premier à partager un mot d’encouragement." : "Be the first to share a word of encouragement."}</p></div>}</div>
         </div>
     </section>;
 }
