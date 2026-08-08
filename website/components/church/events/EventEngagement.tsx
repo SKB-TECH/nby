@@ -28,6 +28,7 @@ export default function EventEngagement({ eventId, title, locale }: { eventId: s
     const [replyingTo, setReplyingTo] = useState<string | null>(null);
     const [replyMessage, setReplyMessage] = useState("");
     const messageRef = useRef<HTMLTextAreaElement>(null);
+    const nameRef = useRef<HTMLInputElement>(null);
     const fr = locale === "fr";
 
     useEffect(() => {
@@ -45,7 +46,8 @@ export default function EventEngagement({ eventId, title, locale }: { eventId: s
 
     async function comment(event: FormEvent<HTMLFormElement>) {
         event.preventDefault();
-        if (busy || !name.trim() || !message.trim()) return;
+        if (busy || !message.trim()) return;
+        if (!name.trim()) { nameRef.current?.focus(); nameRef.current?.reportValidity(); return; }
         setBusy(true);
         try {
             const response = await publicApi<ActivityEngagement>(`/public/activities/${eventId}/comments`, { method: "POST", body: JSON.stringify({ visitorId: visitorId(), authorName: name, message }) });
@@ -127,10 +129,10 @@ export default function EventEngagement({ eventId, title, locale }: { eventId: s
                 <div className="social-composer-row">
                     <span className="social-composer-avatar">{name.trim() ? name.trim().charAt(0).toUpperCase() : "N"}</span>
                     <div className="social-composer-content">
-                        <label className="social-name-field"><span>{fr ? "Commenter en tant que" : "Comment as"}</span><input value={name} onChange={event => setName(event.target.value)} maxLength={80} required placeholder={fr ? "Votre nom" : "Your name"} /></label>
+                        <label className="social-name-field"><span>{fr ? "Votre nom" : "Your name"}</span><input ref={nameRef} value={name} onChange={event => setName(event.target.value)} maxLength={80} required placeholder={fr ? "Ex. Benjamin" : "E.g. Benjamin"} /></label>
                         <div className="event-message-field social-message-field"><textarea ref={messageRef} value={message} onChange={event => setMessage(event.target.value)} maxLength={1000} required rows={2} placeholder={fr ? "Écrire un commentaire…" : "Write a comment…"} />
-                    {showEmojis && <div className="event-emoji-picker" role="group" aria-label={fr ? "Choisir un emoji" : "Choose an emoji"}>{COMMENT_EMOJIS.map(emoji => <button key={emoji} type="button" onClick={() => addEmoji(emoji)} aria-label={emoji}>{emoji}</button>)}</div>}
-                            <div className="event-comment-actions"><button type="button" onClick={() => setShowEmojis(current => !current)} aria-expanded={showEmojis} aria-label={fr ? "Ajouter un emoji" : "Add an emoji"} className={`event-emoji-trigger ${showEmojis ? "active" : ""}`}><SmilePlus /></button><small>{message.length ? `${message.length}/1000` : (fr ? "Soyez respectueux et bienveillant" : "Be respectful and kind")}</small><button disabled={busy || !name.trim() || !message.trim()} className="event-publish-button"><span>{busy ? "…" : (fr ? "Publier" : "Post")}</span><Send /></button></div>
+                    {showEmojis && <div className="event-emoji-picker" role="group" aria-label={fr ? "Choisir un emoji" : "Choose an emoji"}><div className="event-emoji-picker-head"><strong>{fr ? "Choisir un emoji" : "Choose an emoji"}</strong><button type="button" onClick={() => setShowEmojis(false)} aria-label={fr ? "Fermer les emojis" : "Close emojis"}><X /></button></div>{COMMENT_EMOJIS.map(emoji => <button key={emoji} type="button" onClick={() => addEmoji(emoji)} aria-label={emoji}>{emoji}</button>)}</div>}
+                            <div className="event-comment-actions"><button type="button" onClick={() => setShowEmojis(current => !current)} aria-expanded={showEmojis} aria-label={fr ? "Ajouter un emoji" : "Add an emoji"} className={`event-emoji-trigger ${showEmojis ? "active" : ""}`}><SmilePlus /></button><small>{message.length ? `${message.length}/1000` : (fr ? "Soyez respectueux et bienveillant" : "Be respectful and kind")}</small><button disabled={busy || !message.trim()} className="event-publish-button"><span>{busy ? "…" : (fr ? "Publier" : "Post")}</span><Send /></button></div>
                         </div>
                     </div>
                 </div>
